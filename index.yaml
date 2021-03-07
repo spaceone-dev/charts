@@ -11,15 +11,15 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/identity-1.0.0/identity-1.0.0.tgz
     version: 1.0.0
-  inventory:
+  monitoring:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-03-07T20:32:00.934665+09:00"
-    description: SpaceONE inventory Helm chart for Kubernetes
-    digest: 488fd97aacc086cf38d43da05bc81a138e2eb30e2ab876e9188fa641d761de1c
-    name: inventory
+    created: "2021-03-07T20:32:06.736639+09:00"
+    description: SpaceONE monitoring Helm chart for Kubernetes
+    digest: e981197d5f3e4de21a1e1bcac67571f2a8da6bae61997748bdc34c82cc56a4b9
+    name: monitoring
     type: application
     urls:
-    - https://github.com/spaceone-dev/charts/releases/download/inventory-1.0.0/inventory-1.0.0.tgz
+    - https://github.com/spaceone-dev/charts/releases/download/monitoring-1.0.0/monitoring-1.0.0.tgz
     version: 1.0.0
-generated: "2021-03-07T20:32:00.934679+09:00"
+generated: "2021-03-07T20:32:06.736656+09:00"
