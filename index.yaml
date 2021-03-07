@@ -1,14 +1,25 @@
 apiVersion: v1
 entries:
-  config:
+  identity:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-03-07T20:31:54.915588+09:00"
-    description: SpaceONE config Helm chart for Kubernetes
-    digest: da36bc71e1c21f7990f95018a4071fb7182d085385fd638fd05f6eecbf08df36
-    name: config
+    created: "2021-03-07T20:31:31.342078+09:00"
+    description: SpaceONE identity Helm chart for Kubernetes
+    digest: ec36c1fcd12a073cbfc82b8a5792861e732531a95dd79e2331519c3402b1b5ac
+    name: identity
     type: application
     urls:
-    - https://github.com/spaceone-dev/charts/releases/download/config-1.0.0/config-1.0.0.tgz
+    - https://github.com/spaceone-dev/charts/releases/download/identity-1.0.0/identity-1.0.0.tgz
     version: 1.0.0
-generated: "2021-03-07T20:31:54.915606+09:00"
+  inventory:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-03-07T20:32:00.934665+09:00"
+    description: SpaceONE inventory Helm chart for Kubernetes
+    digest: 488fd97aacc086cf38d43da05bc81a138e2eb30e2ab876e9188fa641d761de1c
+    name: inventory
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/inventory-1.0.0/inventory-1.0.0.tgz
+    version: 1.0.0
+generated: "2021-03-07T20:32:00.934679+09:00"
