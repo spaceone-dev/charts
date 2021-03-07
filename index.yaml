@@ -11,15 +11,15 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/plugin-1.0.0/plugin-1.0.0.tgz
     version: 1.0.0
-  spot-automation:
+  supervisor:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-03-07T20:32:31.523858+09:00"
-    description: SpaceONE power_scheduler Helm chart for Kubernetes
-    digest: 129cfb8d32eabf11e0813ee12a77da6e4f31eec76c45d14f478bb23988bb78d7
-    name: spot-automation
+    created: "2021-03-07T20:32:38.414036+09:00"
+    description: SpaceONE supervisor Helm chart for Kubernetes
+    digest: a76d689f4e042e6888fba12f26ff32972ef67f8299512fa8ff1cee528ce9bf10
+    name: supervisor
     type: application
     urls:
-    - https://github.com/spaceone-dev/charts/releases/download/spot-automation-1.0.0/spot-automation-1.0.0.tgz
+    - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2021-03-07T20:32:31.523868+09:00"
+generated: "2021-03-07T20:32:38.41405+09:00"
