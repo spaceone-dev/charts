@@ -1,14 +1,14 @@
 apiVersion: v1
 entries:
-  plugin:
+  config:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-03-07T20:31:49.027881+09:00"
-    description: SpaceONE plugin Helm chart for Kubernetes
-    digest: 1a37e47aa473013f5de03707a07303aee41139765c43b38627b4d3f53ae8e1d5
-    name: plugin
+    created: "2021-03-07T20:31:54.915588+09:00"
+    description: SpaceONE config Helm chart for Kubernetes
+    digest: da36bc71e1c21f7990f95018a4071fb7182d085385fd638fd05f6eecbf08df36
+    name: config
     type: application
     urls:
-    - https://github.com/spaceone-dev/charts/releases/download/plugin-1.0.0/plugin-1.0.0.tgz
+    - https://github.com/spaceone-dev/charts/releases/download/config-1.0.0/config-1.0.0.tgz
     version: 1.0.0
-generated: "2021-03-07T20:31:49.027894+09:00"
+generated: "2021-03-07T20:31:54.915606+09:00"
