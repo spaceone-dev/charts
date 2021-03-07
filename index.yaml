@@ -1,36 +1,25 @@
 apiVersion: v1
 entries:
-  identity:
+  plugin:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-03-07T20:31:31.342078+09:00"
-    description: SpaceONE identity Helm chart for Kubernetes
-    digest: ec36c1fcd12a073cbfc82b8a5792861e732531a95dd79e2331519c3402b1b5ac
-    name: identity
+    created: "2021-03-07T20:31:49.027881+09:00"
+    description: SpaceONE plugin Helm chart for Kubernetes
+    digest: 1a37e47aa473013f5de03707a07303aee41139765c43b38627b4d3f53ae8e1d5
+    name: plugin
     type: application
     urls:
-    - https://github.com/spaceone-dev/charts/releases/download/identity-1.0.0/identity-1.0.0.tgz
+    - https://github.com/spaceone-dev/charts/releases/download/plugin-1.0.0/plugin-1.0.0.tgz
     version: 1.0.0
-  monitoring:
+  spot-automation:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-03-07T20:32:06.736639+09:00"
-    description: SpaceONE monitoring Helm chart for Kubernetes
-    digest: e981197d5f3e4de21a1e1bcac67571f2a8da6bae61997748bdc34c82cc56a4b9
-    name: monitoring
-    type: application
-    urls:
-    - https://github.com/spaceone-dev/charts/releases/download/monitoring-1.0.0/monitoring-1.0.0.tgz
-    version: 1.0.0
-  power-scheduler:
-  - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2021-03-07T20:32:25.175627+09:00"
+    created: "2021-03-07T20:32:31.523858+09:00"
     description: SpaceONE power_scheduler Helm chart for Kubernetes
-    digest: 5f20ab43d54d7eb7a0349f0486a6f93fd4c56f02e75e39dad2151ee136872ebe
-    name: power-scheduler
+    digest: 129cfb8d32eabf11e0813ee12a77da6e4f31eec76c45d14f478bb23988bb78d7
+    name: spot-automation
     type: application
     urls:
-    - https://github.com/spaceone-dev/charts/releases/download/power-scheduler-1.0.0/power-scheduler-1.0.0.tgz
+    - https://github.com/spaceone-dev/charts/releases/download/spot-automation-1.0.0/spot-automation-1.0.0.tgz
     version: 1.0.0
-generated: "2021-03-07T20:32:25.175635+09:00"
+generated: "2021-03-07T20:32:31.523868+09:00"
