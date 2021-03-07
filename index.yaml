@@ -1,14 +1,14 @@
 apiVersion: v1
 entries:
-  identity:
+  secret:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-03-07T20:31:31.342078+09:00"
-    description: SpaceONE identity Helm chart for Kubernetes
-    digest: ec36c1fcd12a073cbfc82b8a5792861e732531a95dd79e2331519c3402b1b5ac
-    name: identity
+    created: "2021-03-07T20:31:37.047356+09:00"
+    description: SpaceONE secret Helm chart for Kubernetes
+    digest: c375edda2bebe83e97c8350a6f9dd8538cb55b3be217207abc14667543b4e807
+    name: secret
     type: application
     urls:
-    - https://github.com/spaceone-dev/charts/releases/download/identity-1.0.0/identity-1.0.0.tgz
+    - https://github.com/spaceone-dev/charts/releases/download/secret-1.0.0/secret-1.0.0.tgz
     version: 1.0.0
-generated: "2021-03-07T20:31:31.342122+09:00"
+generated: "2021-03-07T20:31:37.047371+09:00"
