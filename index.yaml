@@ -77,6 +77,17 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/power-scheduler-1.0.0/power-scheduler-1.0.0.tgz
     version: 1.0.0
+  project-site:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2021-03-11T02:09:06.08758272Z"
+    description: SpaceONE Open-Source Project Site Helm chart for Kubernetes
+    digest: 76e707e8e1b3d37038cbaf6e5e9d3faaf90e717c60f7b61aff5638ba0d0c18d6
+    name: project-site
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/project-site-0.1.0/project-site-0.1.0.tgz
+    version: 0.1.0
   repository:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -152,4 +163,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2021-03-08T04:38:08.763767937Z"
+generated: "2021-03-11T02:09:06.08762502Z"
