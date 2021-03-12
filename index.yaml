@@ -46,6 +46,16 @@ entries:
   console-api:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2021-03-12T09:16:05.066782879Z"
+    description: SpaceONE console-api Helm chart for Kubernetes
+    digest: 9bf196de6269ddd296e5122e72837907ff4196f78119ec3fada856e87ab7f473
+    name: console-api
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/console-api-1.1.1/console-api-1.1.1.tgz
+    version: 1.1.1
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2021-03-12T03:49:58.775636226Z"
     description: SpaceONE console-api Helm chart for Kubernetes
     digest: 5a29a34c3bbccb7fc269dc3fc5718e4364d86801fb4dccef48d8876cdbd20381
@@ -215,4 +225,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2021-03-12T03:49:58.775661926Z"
+generated: "2021-03-12T09:16:05.066808179Z"
