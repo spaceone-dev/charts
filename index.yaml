@@ -172,6 +172,17 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/secret-1.0.0/secret-1.0.0.tgz
     version: 1.0.0
+  spaceone-initializer:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2021-03-13T13:37:45.061405279Z"
+    description: SpaceONE root domain initializer Helm chart for Kubernetes
+    digest: 44c61be173e85750d4bd273fbd6af19bbdd7a63c55a0109162caba12d2cd7239
+    name: spaceone-initializer
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/spaceone-initializer-0.1.0/spaceone-initializer-0.1.0.tgz
+    version: 0.1.0
   spot-automation:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -235,4 +246,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2021-03-13T09:12:51.412079252Z"
+generated: "2021-03-13T13:37:45.06143178Z"
