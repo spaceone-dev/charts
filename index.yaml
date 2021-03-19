@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   billing:
   - apiVersion: v2
+    appVersion: 1.x.y
+    created: "2021-03-19T08:16:55.012512854Z"
+    description: SpaceONE billing Helm chart for Kubernetes
+    digest: 37e2da672a18b9aff51313482f3427fea0df087f074d2e83555b05ee494d5b9a
+    name: billing
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/billing-1.1.1/billing-1.1.1.tgz
+    version: 1.1.1
+  - apiVersion: v2
     appVersion: 1.0.0
     created: "2021-03-07T20:41:45.590251+09:00"
     description: SpaceONE billing Helm chart for Kubernetes
@@ -409,4 +419,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2021-03-19T08:16:35.224047768Z"
+generated: "2021-03-19T08:16:55.012559354Z"
