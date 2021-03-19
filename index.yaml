@@ -160,6 +160,16 @@ entries:
     version: 1.0.0
   power-scheduler:
   - apiVersion: v2
+    appVersion: 1.x.y
+    created: "2021-03-19T08:17:21.92543338Z"
+    description: SpaceONE power_scheduler Helm chart for Kubernetes
+    digest: c9f9e75e89820a8d21bffce3e2a2dcd0ad5b25d84dde96b46428a7cb758923f2
+    name: power-scheduler
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/power-scheduler-1.1.1/power-scheduler-1.1.1.tgz
+    version: 1.1.1
+  - apiVersion: v2
     appVersion: 1.0.0
     created: "2021-03-07T20:41:47.479629+09:00"
     description: SpaceONE power_scheduler Helm chart for Kubernetes
@@ -419,4 +429,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2021-03-19T08:16:55.012559354Z"
+generated: "2021-03-19T08:17:21.925488581Z"
