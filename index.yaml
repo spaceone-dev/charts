@@ -572,6 +572,17 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/spot-automation-1.0.0/spot-automation-1.0.0.tgz
     version: 1.0.0
+  spot-automation-proxy:
+  - apiVersion: v2
+    appVersion: 1.x.y
+    created: "2021-04-01T09:14:48.004074548Z"
+    description: SpaceONE Spot Automation Proxy Helm chart for Kubernetes
+    digest: 6bdaa17ef5b638f300fd3f740f0b4b43a5c1eb83ff8a9a6286edb7180675d6d8
+    name: spot-automation-proxy
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/spot-automation-proxy-1.0.0/spot-automation-proxy-1.0.0.tgz
+    version: 1.0.0
   statistics:
   - apiVersion: v2
     appVersion: 1.x.y
@@ -634,4 +645,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2021-03-30T05:09:04.40736161Z"
+generated: "2021-04-01T09:14:48.004134149Z"
