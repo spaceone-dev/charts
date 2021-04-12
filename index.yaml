@@ -97,6 +97,16 @@ entries:
   cost-saving:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2021-04-12T02:35:30.153332506Z"
+    description: SpaceONE cost_saving Helm chart for Kubernetes
+    digest: e543c3effd58468ca2bb79cebeaa1cf78cc029a036eb117d368d48714152829b
+    name: cost-saving
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/cost-saving-1.0.1/cost-saving-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2021-04-08T09:49:56.023745789Z"
     description: SpaceONE cost_saving Helm chart for Kubernetes
     digest: a4571cfbc8bd2a659e44f15e70a997cf5139eaf3df4ad14beb63bd21c33ac3e1
@@ -676,4 +686,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2021-04-08T09:49:56.024495194Z"
+generated: "2021-04-12T02:35:30.153394308Z"
