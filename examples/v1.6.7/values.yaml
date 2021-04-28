@@ -470,6 +470,3 @@ global:
 #            - name: mongos-conf
 #              configMap:
 #                  name: mongos-conf
-#            - name: shared-conf
-#              configMap:
-#                  name: shared-conf
