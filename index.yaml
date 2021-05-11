@@ -445,6 +445,16 @@ entries:
   repository:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2021-05-11T11:30:58.298236706Z"
+    description: SpaceONE repository Helm chart for Kubernetes
+    digest: 07d5efdc0e9b401e9e64e83fc5e2d18da83a02b567886d78410fb5740acb744c
+    name: repository
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/repository-1.3.3/repository-1.3.3.tgz
+    version: 1.3.3
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2021-05-11T09:36:01.739889634Z"
     description: SpaceONE repository Helm chart for Kubernetes
     digest: 4f8a3f21da1dee836ea0f63b69e610d32646f2c5eb277e081415eb6d35a244e1
@@ -1050,4 +1060,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2021-05-11T11:24:35.434727325Z"
+generated: "2021-05-11T11:30:58.298400716Z"
