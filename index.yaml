@@ -3,6 +3,16 @@ entries:
   billing:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2021-05-11T00:48:49.384839097Z"
+    description: SpaceONE billing Helm chart for Kubernetes
+    digest: 990b06314223c34e49a85f3b3a99a4cd70b72cd127a7a2f85f4494147b36eb39
+    name: billing
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/billing-1.3.1/billing-1.3.1.tgz
+    version: 1.3.1
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2021-03-19T08:16:55.012512854Z"
     description: SpaceONE billing Helm chart for Kubernetes
     digest: 37e2da672a18b9aff51313482f3427fea0df087f074d2e83555b05ee494d5b9a
@@ -22,6 +32,16 @@ entries:
     - https://github.com/spaceone-dev/charts/releases/download/billing-1.0.0/billing-1.0.0.tgz
     version: 1.0.0
   config:
+  - apiVersion: v2
+    appVersion: 1.x.y
+    created: "2021-05-11T00:47:55.993187652Z"
+    description: SpaceONE config Helm chart for Kubernetes
+    digest: a39e7846d0fab6fcf65022b310be34e7e7bcef242645bc7aecf05789f3f15496
+    name: config
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/config-1.3.1/config-1.3.1.tgz
+    version: 1.3.1
   - apiVersion: v2
     appVersion: 1.x.y
     created: "2021-03-19T08:15:35.138620531Z"
@@ -761,16 +781,6 @@ entries:
   statistics:
   - apiVersion: v2
     appVersion: 1.x.y
-    created: "2021-05-11T00:48:32.745449053Z"
-    description: SpaceONE statistics Helm chart for Kubernetes
-    digest: 28c6f52e4bd1aa9602373020860b3af6c3d8be5cfe2e159486c30300444a6cbf
-    name: statistics
-    type: application
-    urls:
-    - https://github.com/spaceone-dev/charts/releases/download/statistics-1.3.1/statistics-1.3.1.tgz
-    version: 1.3.1
-  - apiVersion: v2
-    appVersion: 1.x.y
     created: "2021-03-19T08:16:35.223998064Z"
     description: SpaceONE statistics Helm chart for Kubernetes
     digest: bbe4f8e3581588b278b5acec79f70e5008b1c512fd2070c307fd105dc547f2c7
@@ -830,4 +840,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2021-05-11T00:48:32.745595872Z"
+generated: "2021-05-11T00:48:49.385144298Z"
