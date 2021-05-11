@@ -346,6 +346,16 @@ entries:
   secret:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2021-05-11T01:22:51.798130109Z"
+    description: SpaceONE secret Helm chart for Kubernetes
+    digest: 10ef6bf5e337dcb35130b3838c10a9af3de4d16666ae34745dad43d743bcb6f9
+    name: secret
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/secret-1.3.1/secret-1.3.1.tgz
+    version: 1.3.1
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2021-03-25T04:19:46.44289189Z"
     description: SpaceONE secret Helm chart for Kubernetes
     digest: f59b22cb25c4f199bddb5b63dc46049376f184184c774ccdebd612f48b8cb770
@@ -840,4 +850,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2021-05-11T00:49:08.728856177Z"
+generated: "2021-05-11T01:22:51.798205913Z"
