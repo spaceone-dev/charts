@@ -3,16 +3,6 @@ entries:
   billing:
   - apiVersion: v2
     appVersion: 1.x.y
-    created: "2021-05-11T09:44:34.879848827Z"
-    description: SpaceONE billing Helm chart for Kubernetes
-    digest: 7b1429f753ce325e0b03ae2d309f5c6bba912fe1d100840e7e2bdab890dab0fc
-    name: billing
-    type: application
-    urls:
-    - https://github.com/spaceone-dev/charts/releases/download/billing-1.3.2/billing-1.3.2.tgz
-    version: 1.3.2
-  - apiVersion: v2
-    appVersion: 1.x.y
     created: "2021-05-11T01:25:54.962873429Z"
     description: SpaceONE billing Helm chart for Kubernetes
     digest: 9e5a1e8e8b2e45d5e81baded16bf5f3242a81c3ef4f074d88aed7fec396baf82
@@ -361,6 +351,16 @@ entries:
     - https://github.com/spaceone-dev/charts/releases/download/plugin-1.0.0/plugin-1.0.0.tgz
     version: 1.0.0
   power-scheduler:
+  - apiVersion: v2
+    appVersion: 1.x.y
+    created: "2021-05-11T09:45:59.29681563Z"
+    description: SpaceONE power_scheduler Helm chart for Kubernetes
+    digest: 117e61a3a446b63a09c9996ef688e8c0968313b5a0d1a53004abf536e2f8bc17
+    name: power-scheduler
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/power-scheduler-1.3.2/power-scheduler-1.3.2.tgz
+    version: 1.3.2
   - apiVersion: v2
     appVersion: 1.x.y
     created: "2021-05-11T01:35:34.485317466Z"
@@ -990,4 +990,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2021-05-11T09:44:34.87997153Z"
+generated: "2021-05-11T09:45:59.297153552Z"
