@@ -959,6 +959,16 @@ entries:
   spot-automation:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2021-05-11T12:12:25.967239878Z"
+    description: SpaceONE spot_automation Helm chart for Kubernetes
+    digest: 33f69af8a393014a65e6104a9d44c54435b47751e67bb1a1ef71ca1599e8bbe2
+    name: spot-automation
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/spot-automation-1.3.5/spot-automation-1.3.5.tgz
+    version: 1.3.5
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2021-05-11T12:02:25.201971773Z"
     description: SpaceONE spot_automation Helm chart for Kubernetes
     digest: e3fc7fee4f9044c6b3ef7538eb88397f5f2b6c2a2a1c77fc4057011d552cd5bd
@@ -1150,4 +1160,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2021-05-11T12:02:25.202155884Z"
+generated: "2021-05-11T12:12:25.967434081Z"
