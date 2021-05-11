@@ -282,6 +282,16 @@ entries:
   plugin:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2021-05-11T01:33:25.129770569Z"
+    description: SpaceONE plugin Helm chart for Kubernetes
+    digest: 0943097177ccf9db48acfc75d8b5dff2a8db3c24854eca4397441a77f4664fe1
+    name: plugin
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/plugin-1.3.1/plugin-1.3.1.tgz
+    version: 1.3.1
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2021-03-19T08:31:10.904412933Z"
     description: SpaceONE plugin Helm chart for Kubernetes
     digest: 7249843fb9048721e756912931ad1e1e627168b91d6452324e15ae76e02bddb8
@@ -880,4 +890,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2021-05-11T01:30:34.103339432Z"
+generated: "2021-05-11T01:33:25.12984417Z"
