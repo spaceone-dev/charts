@@ -360,6 +360,16 @@ entries:
   inventory:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2021-05-21T08:56:47.843603658Z"
+    description: SpaceONE inventory Helm chart for Kubernetes
+    digest: faaa4ea87f94e49b704d443fa7b20d9ca0fc7aab130d55ab9328f8b92f0e89af
+    name: inventory
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/inventory-1.3.6/inventory-1.3.6.tgz
+    version: 1.3.6
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2021-05-11T11:34:13.429015856Z"
     description: SpaceONE inventory Helm chart for Kubernetes
     digest: 89bd4999ab599120ef18fd45c8a7d3c73c18a48b007e522078cf9f2b725c98ff
@@ -1365,4 +1375,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2021-05-21T08:55:22.365446182Z"
+generated: "2021-05-21T08:56:47.843933056Z"
