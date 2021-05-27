@@ -325,9 +325,9 @@ supervisor:
                 headless: true
                 replica:
                     inventory.Collector: 2
-                    inventory.Collector?aws-ec2: 10
-                    inventory.Collector?aws-cloud-services: 10
-                    inventory.Collector?aws-power-state: 10
+                    inventory.Collector?aws-ec2: 4
+                    inventory.Collector?aws-cloud-services: 4
+                    inventory.Collector?aws-power-state: 4
                     monitoring.DataSource: 2
 
 #        TOKEN: ___CHANGE_YOUR_ROOT_TOKEN___ 
