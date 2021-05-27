@@ -83,14 +83,41 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 
 # Upgrade
 
-There is no configuration change between v1.7.1 and v1.7.2.
+There is one configmap change between v1.7.1 and v1.7.2.
 
-Just update your version number of each service.
+File: pre-condition/shared.yaml
+
+* Add AuthenticationAPIKeyHandler in authentication
+
+~~~
+         authentication:
+         - backend: spaceone.core.handler.authentication_handler.AuthenticationGRPCHandler
+           uri: grpc://identity:50051/v1/Domain/get_public_key
++        - backend: spaceone.core.handler.authentication_api_key_handler.AuthenticationAPIKeyHandler
++          uri: grpc://identity:50051/v1/APIKey/get
+         authorization:
+         - backend: spaceone.core.handler.authorization_handler.AuthorizationGRPCHandler
+           uri: grpc://identity:50051/v1/Authorization/verify
+~~~
+
+After update shared.yaml
+
+~~~sh
+kubectl apply -f shared.yaml
+~~~
+
+There is no change in values files. ***%s/1.7.1/1.7.2/g*** in VIM.
+Just update your docker image version number of each service.
 
 * Upgrade helm chart
 
 ~~~
 kcd spaceone
+helm repo update
+
+# If you use Type 1.
 helm upgrade spaceone -f values.yaml -f frontend.yaml spaceone/spaceone
 
+# if you use Type 2.
+helm upgrade spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/spaceone
 ~~~
