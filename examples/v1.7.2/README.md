@@ -1,4 +1,4 @@
-# Kubernetest namespace
+# Kubernetes namespace
 
 ~~~
 kubectl create ns spaceone
