@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongos-conf
+  namespace: dev-spaceone
+data:
+  mongos.yml: |
+    sharding:
+      configDB: rs0/mongodb-cfg1-dev.db.internal.dev.spaceone.dev:27028,mongodb-cfg2-dev.db.internal.dev.spaceone.dev:27028,mongodb-cfg3-dev.db.internal.dev.spaceone.dev:27028
+    net:
+      port: 27028
+    security:
+      keyFile: /opt/mongos/mongo-shard.pem
