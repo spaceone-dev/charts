@@ -1312,6 +1312,16 @@ entries:
   spaceone-initializer:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2021-06-09T14:28:44.626333596Z"
+    description: SpaceONE domain initializer Helm chart for Kubernetes
+    digest: 3afdebda1546ccdbf34d59b7005dd83863a4be2905f531055a0229e0e1e5f877
+    name: spaceone-initializer
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/spaceone-initializer-1.2.0/spaceone-initializer-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2021-05-31T04:51:06.02806597Z"
     description: SpaceONE domain initializer Helm chart for Kubernetes
     digest: d3c7b8c91c51eb7611c39ac861e01c95707b79c087dcd2da1f8fb334f437ada6
@@ -1574,4 +1584,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2021-05-31T10:46:04.303766309Z"
+generated: "2021-06-09T14:28:44.626750519Z"
