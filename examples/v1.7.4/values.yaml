@@ -19,7 +19,7 @@ identity:
     replicas: 1
     image:
       name: public.ecr.aws/megazone/spaceone/identity
-      version: 1.7.4
+      version: 1.7.4.1
 
 secret:
     enabled: true
@@ -144,7 +144,7 @@ monitoring:
     replicas: 1
     image:
       name: public.ecr.aws/megazone/spaceone/monitoring
-      version: 1.7.4.1
+      version: 1.7.4.3
 
 statistics:
     enabled: true

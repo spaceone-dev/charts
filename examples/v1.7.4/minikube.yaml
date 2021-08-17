@@ -17,8 +17,8 @@ console:
   name: console
   replicas: 1
   image:
-      name: pyengine/console
-      version: latest
+      name: spaceone/console
+      version: 1.7.4.7
   imagePullPolicy: IfNotPresent
 
   production_json:
@@ -32,8 +32,8 @@ console-api:
   name: console-api
   replicas: 1
   image:
-      name: pyengine/console-api
-      version: latest
+      name: spaceone/console-api
+      version: 1.7.4
   imagePullPolicy: IfNotPresent
 
   production_json:
@@ -57,8 +57,8 @@ identity:
     enabled: true
     replicas: 1
     image:
-      name: pyengine/identity
-      version: test
+      name: spaceone/identity
+      version: 1.7.4.1
     imagePullPolicy: Always
 
     application_grpc:
@@ -108,8 +108,8 @@ secret:
     enabled: true
     replicas: 1
     image:
-      name: pyengine/secret
-      version: latest
+      name: spaceone/secret
+      version: 1.7.4
     application_grpc:
         BACKEND: ConsulConnector
         CONNECTORS:
@@ -131,8 +131,8 @@ repository:
     enabled: true
     replicas: 1
     image:
-      name: pyengine/repository
-      version: latest
+      name: spaceone/repository
+      version: 1.7.4
     application_grpc:
 #        ROOT_TOKEN: ___CHANGE_YOUR_ROOT_TOKEN___ 
         ROOT_TOKEN_INFO:
@@ -145,8 +145,8 @@ plugin:
     enabled: true
     replicas: 1
     image:
-      name: pyengine/plugin
-      version: latest
+      name: spaceone/plugin
+      version: 1.7.4
  
     scheduler: false
     worker: false
@@ -162,16 +162,16 @@ config:
     enabled: true
     replicas: 1
     image:
-      name: pyengine/config
-      version: latest
+      name: spaceone/config
+      version: 1.7.4
 
 inventory:
     enabled: true
     replicas: 1
     replicas_worker: 1
     image:
-      name: pyengine/inventory
-      version: latest
+      name: spaceone/inventory
+      version: 1.7.4.1
     scheduler: true
     worker: true
     application_grpc:
@@ -226,15 +226,15 @@ monitoring:
     enabled: true
     replicas: 1
     image:
-      name: pyengine/monitoring
-      version: latest
+      name: spaceone/monitoring
+      version: 1.7.4.3
 
 statistics:
     enabled: true
     replicas: 1
     image:
-      name: pyengine/statistics
-      version: latest
+      name: spaceone/statistics
+      version: 1.7.4
  
     scheduler: false
     worker: false
@@ -250,15 +250,15 @@ billing:
     enabled: false
     replicas: 1
     image:
-      name: pyengine/billing
-      version: latest
+      name: spaceone/billing
+      version: 1.7.4
 
 power-scheduler:
     enabled: false
     replicas: 1
     image:
-      name: pyengine/power-scheduler
-      version: latest
+      name: spaceone/power-scheduler
+      version: 1.7.4
  
     scheduler: true
     worker: true
@@ -276,8 +276,8 @@ cost-saving:
     worker: true
     replicas: 1
     image:
-      name: pyengine/cost-saving
-      version: latest
+      name: spaceone/cost-saving
+      version: 1.7.4
 
     application_grpc:
         CONNECTORS:
@@ -321,8 +321,8 @@ spot-automation:
     rest: true
     replicas: 1
     image:
-      name: pyengine/spot-automation
-      version: latest
+      name: spaceone/spot-automation
+      version: 1.7.4
 
 # Overwrite application config
     application_grpc:
@@ -387,8 +387,8 @@ marketplace-assets:
 supervisor:
     enabled: true
     image:
-      name: pyengine/supervisor
-      version: latest
+      name: spaceone/supervisor
+      version: 1.7.4
     application: {}
     application_scheduler:
         NAME: root
@@ -426,8 +426,8 @@ ingress:
 spaceone-initializer:
   enabled: true
   image:
-      name: pyengine/spacectl
-      version: latest
+      name: spaceone/spacectl
+      version: 1.7.4
   skip_health_check: false
   domain: root
   main:
@@ -448,7 +448,7 @@ spaceone-initializer:
       username: user1@example.com
       password: User1234!
       consul_server: spaceone-consul-server
-      plugin_repo : pyengine
+      plugin_repo : spaceone
       tasks: []
 
 
