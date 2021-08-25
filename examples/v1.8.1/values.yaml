@@ -138,13 +138,78 @@ inventory:
 #          protocol: TCP
 #
 
-
+##############################
+# for monitoring webhook
+# 1) Update WEBHOOK_DOMAIN:
+#    - if your SpaceONE domain is spaceone.dev
+#    - set WEBHOOK_DOMAIN as monitoring-webhook.spaceone.dev 
+# 2) Update TOKEN or TOKEN_INFO
+# 3) Update Ingress for rest API
+#    - make sure that your certificate includes monitoring WEBHOOK_DOMAIN
+#    - external dns is your WEBHOOK_DOMAIN name
+##############################
 monitoring:
     enabled: true
+    grpc: true
+    scheduler: true
+    worker: true
+    rest: true
     replicas: 1
+    replicas_rest: 1
+    replicas_worker: 1
     image:
       name: public.ecr.aws/megazone/spaceone/monitoring
       version: 1.8.1
+    application_grpc:
+      WEBHOOK_DOMAIN: https://monitoring-webhook.example.com
+#      TOKEN: __CHANGE_YOUR_ROOT_TOKEN___
+      TOKEN_INFO:
+          protocol: consul
+          config:
+              host: spaceone-consul-server
+          uri: root/api_key/TOKEN
+
+    application_rest:
+#      TOKEN: __CHANGE_YOUR_ROOT_TOKEN___
+      TOKEN_INFO:
+          protocol: consul
+          config:
+              host: spaceone-consul-server
+          uri: root/api_key/TOKEN
+
+    application_scheduler:
+#      TOKEN: __CHANGE_YOUR_ROOT_TOKEN___
+      TOKEN_INFO:
+          protocol: consul
+          config:
+              host: spaceone-consul-server
+          uri: root/api_key/TOKEN
+
+    application_worker:
+      WEBHOOK_DOMAIN: https://monitoring-webhook.example.com
+#      TOKEN: __CHANGE_YOUR_ROOT_TOKEN___
+      TOKEN_INFO:
+          protocol: consul
+          config:
+              host: spaceone-consul-server
+          uri: root/api_key/TOKEN
+
+
+#    ingress:
+#        annotations:
+#            kubernetes.io/ingress.class: alb
+#            alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+#            alb.ingress.kubernetes.io/inbound-cidrs: 0.0.0.0/0 # replace or leave out
+#            alb.ingress.kubernetes.io/scheme: internet-facing
+#            alb.ingress.kubernetes.io/target-type: ip 
+#            alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:ap-northeast-2:111111111111:certificate/11111111-458f-4c5f-b4c5-e3a2eb34caff"
+#            alb.ingress.kubernetes.io/healthcheck-path: "/check"
+#            alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=600
+#            external-dns.alpha.kubernetes.io/hostname: monitoring-webhook.example.com
+#        servicePort: 80
+#        path: /*
+
+
 
 statistics:
     enabled: true
