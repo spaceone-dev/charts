@@ -209,8 +209,6 @@ monitoring:
 #        servicePort: 80
 #        path: /*
 
-
-
 statistics:
     enabled: true
     replicas: 1
@@ -233,6 +231,13 @@ billing:
     replicas: 1
     image:
       name: public.ecr.aws/megazone/spaceone/billing
+      version: 1.8.1
+
+notification:
+    enabled: false
+    replicas: 1
+    image:
+      name: public.ecr.aws/megazone/spaceone/notification
       version: 1.8.1
 
 power-scheduler:
