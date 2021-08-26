@@ -141,10 +141,28 @@ inventory:
 
 monitoring:
     enabled: true
+    developer: false
+    grpc: true
+    scheduler: true
+    worker: true
+    rest: true
     replicas: 1
     image:
       name: public.ecr.aws/megazone/spaceone/monitoring
       version: 1.8.1
+    application_grpc:
+        WEBHOOK_DOMAIN: __CHANGE_YOUR_WEBHOOK_DOMAIN__
+        TOKEN: ___CHANGE_YOUR_ROOT_TOKEN___
+
+    application_rest:
+        TOKEN: ___CHANGE_YOUR_ROOT_TOKEN___
+
+    application_scheduler:
+        TOKEN: ___CHANGE_YOUR_ROOT_TOKEN___
+
+    application_worker:
+        WEBHOOK_DOMAIN: __CHANGE_YOUR_WEBHOOK_DOMAIN__
+        TOKEN: ___CHANGE_YOUR_ROOT_TOKEN___
 
 statistics:
     enabled: true
@@ -168,6 +186,13 @@ billing:
     replicas: 1
     image:
       name: public.ecr.aws/megazone/spaceone/billing
+      version: 1.8.1
+
+notification:
+    enabled: false
+    replicas: 1
+    image:
+      name: public.ecr.aws/megazone/spaceone/notification
       version: 1.8.1
 
 power-scheduler:

@@ -253,6 +253,13 @@ billing:
       name: spaceone/billing
       version: 1.8.1
 
+notification:
+    enabled: false
+    replicas: 1
+    image:
+      name: public.ecr.aws/megazone/spaceone/notification
+      version: 1.8.1 
+
 power-scheduler:
     enabled: false
     replicas: 1
