@@ -228,6 +228,39 @@ monitoring:
     image:
       name: spaceone/monitoring
       version: 1.8.1
+    application_grpc:
+      WEBHOOK_DOMAIN: https://monitoring-webhook.example.com
+#      TOKEN: __CHANGE_YOUR_ROOT_TOKEN___
+      TOKEN_INFO:
+          protocol: consul
+          config:
+              host: spaceone-consul-server
+          uri: root/api_key/TOKEN
+
+    application_rest:
+#      TOKEN: __CHANGE_YOUR_ROOT_TOKEN___
+      TOKEN_INFO:
+          protocol: consul
+          config:
+              host: spaceone-consul-server
+          uri: root/api_key/TOKEN
+
+    application_scheduler:
+#      TOKEN: __CHANGE_YOUR_ROOT_TOKEN___
+      TOKEN_INFO:
+          protocol: consul
+          config:
+              host: spaceone-consul-server
+          uri: root/api_key/TOKEN
+
+    application_worker:
+      WEBHOOK_DOMAIN: https://monitoring-webhook.example.com
+#      TOKEN: __CHANGE_YOUR_ROOT_TOKEN___
+      TOKEN_INFO:
+          protocol: consul
+          config:
+              host: spaceone-consul-server
+          uri: root/api_key/TOKEN
 
 statistics:
     enabled: true

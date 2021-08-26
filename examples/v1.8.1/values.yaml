@@ -150,7 +150,6 @@ inventory:
 ##############################
 monitoring:
     enabled: true
-    developer: false
     grpc: true
     scheduler: true
     worker: true
