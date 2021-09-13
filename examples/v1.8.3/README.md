@@ -77,19 +77,19 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
       application_grpc:
           WEBHOOK_DOMAIN: https://monitoring-webhook.spaceone.dev
           TOKEN: []
-+          INSTALLED_DATA_SOURCE_PLUGINS:
-+            - name: AWS CloudWatch
++         INSTALLED_DATA_SOURCE_PLUGINS:
++           - name: AWS CloudWatch
++             plugin_info:
++               plugin_id: plugin-41782f6158bb
++               provider: aws
++           - name: Azure Monitor
 +              plugin_info:
-+                plugin_id: plugin-41782f6158bb
-+                provider: aws
-+            - name: Azure Monitor
-+              plugin_info:
-+                plugin_id: plugin-c6c14566298c
-+                provider: azure
-+            - name: Google Cloud Monitoring
-+              plugin_info:
-+                plugin_id: plugin-57773973639a
-+                provider: google_cloud
++              plugin_id: plugin-c6c14566298c
++               provider: azure
++           - name: Google Cloud Monitoring
++             plugin_info:
++               plugin_id: plugin-57773973639a
++               provider: google_cloud
 
 ```
 - [ADD] notification.application_grpc.INSTALLED_DATA_SOURCE_PLUGINS
@@ -99,27 +99,27 @@ monitoring:
     application_grpc:
         WEBHOOK_DOMAIN: https://monitoring-webhook.spaceone.dev
         TOKEN: []
-+        INSTALLED_PROTOCOL_PLUGINS:
-+          - name: Slack
-+            plugin_info:
-+              plugin_id: slack-notification-protocol
-+              options: {}
-+              schema: slack_webhook
-+          - name: Telegram
-+            plugin_info:
-+              plugin_id: plugin-telegram-noti-protocol
-+              options: {}
-+              schema: telegram_auth_token
-+          - name: Email
-+            plugin_info:
-+              plugin_id: plugin-email-noti-protocol
-+              options: {}
-+              secret_data:
-+                smtp_host: email-smtp.us-west-2.amazonaws.com
-+                smtp_port: "587"
-+                user: **********
-+                password: **********
-+              schema: email_smtp
++       INSTALLED_PROTOCOL_PLUGINS:
++         - name: Slack
++           plugin_info:
++             plugin_id: slack-notification-protocol
++             options: {}
++             schema: slack_webhook
++         - name: Telegram
++           plugin_info:
++            plugin_id: plugin-telegram-noti-protocol
++             options: {}
++             schema: telegram_auth_token
++         - name: Email
++           plugin_info:
++             plugin_id: plugin-email-noti-protocol
++             options: {}
++             secret_data:
++               smtp_host: email-smtp.us-west-2.amazonaws.com
++               smtp_port: "587"
++               user: **********
++               password: **********
++             schema: email_smtp
 ```
 - Upgrade helm chart
 
