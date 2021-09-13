@@ -78,18 +78,19 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
           WEBHOOK_DOMAIN: https://monitoring-webhook.spaceone.dev
           TOKEN: []
 +          INSTALLED_DATA_SOURCE_PLUGINS:
-+       - name: AWS CloudWatch
++            - name: AWS CloudWatch
 +              plugin_info:
-+              plugin_id: plugin-41782f6158bb
-+              provider: aws
-+          - name: Azure Monitor
++                plugin_id: plugin-41782f6158bb
++                provider: aws
++            - name: Azure Monitor
 +              plugin_info:
-+              plugin_id: plugin-c6c14566298c
-+              provider: azure
-+          - name: Google Cloud Monitoring
++                plugin_id: plugin-c6c14566298c
++                provider: azure
++            - name: Google Cloud Monitoring
 +              plugin_info:
-+              plugin_id: plugin-57773973639a
-+              provider: google_cloud
++                plugin_id: plugin-57773973639a
++                provider: google_cloud
+
 ```
 - [ADD] notification.application_grpc.INSTALLED_DATA_SOURCE_PLUGINS
 ```diff
