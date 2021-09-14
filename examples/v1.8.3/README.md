@@ -94,7 +94,7 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 ```
 - [ADD] notification.application_grpc.INSTALLED_DATA_SOURCE_PLUGINS
 ```diff
-monitoring:
+notification:
 ...
     application_grpc:
         WEBHOOK_DOMAIN: https://monitoring-webhook.spaceone.dev
