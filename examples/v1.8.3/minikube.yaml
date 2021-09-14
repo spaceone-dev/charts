@@ -58,7 +58,7 @@ identity:
     replicas: 1
     image:
       name: spaceone/identity
-      version: 1.8.3
+      version: 1.8.3.1
     imagePullPolicy: Always
 
     application_grpc:
