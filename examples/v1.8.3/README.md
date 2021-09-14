@@ -76,7 +76,11 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
   ...
       application_grpc:
           WEBHOOK_DOMAIN: https://monitoring-webhook.spaceone.dev
-          TOKEN: []
+          TOKEN_INFO:
+            protocol: consul
+            config:
+              host: spaceone-consul-server
+            uri: root/api_key/TOKEN
 +         INSTALLED_DATA_SOURCE_PLUGINS:
 +           - name: AWS CloudWatch
 +             plugin_info:
@@ -96,9 +100,7 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 ```diff
 notification:
 ...
-    application_grpc:
-        WEBHOOK_DOMAIN: https://monitoring-webhook.spaceone.dev
-        TOKEN: []
++   application_grpc:
 +       INSTALLED_PROTOCOL_PLUGINS:
 +         - name: Slack
 +           plugin_info:
