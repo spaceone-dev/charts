@@ -186,16 +186,6 @@ entries:
   console-api:
   - apiVersion: v2
     appVersion: 1.x.y
-    created: "2021-10-05T08:11:19.113396586Z"
-    description: SpaceONE console-api Helm chart for Kubernetes
-    digest: 210637fcf3957c6963a62e409b24e3723d7d49e633dbe5bc6c8e1f06f2ce271a
-    name: console-api
-    type: application
-    urls:
-    - https://github.com/spaceone-dev/charts/releases/download/console-api-1.1.6/console-api-1.1.6.tgz
-    version: 1.1.6
-  - apiVersion: v2
-    appVersion: 1.x.y
     created: "2021-05-17T03:52:09.370505563Z"
     description: SpaceONE console-api Helm chart for Kubernetes
     digest: eae3053aa28b1cbb69ad7ab7467cb2aabc6459ccf09be6a5c601d5821b1a9ea1
@@ -499,6 +489,16 @@ entries:
     - https://github.com/spaceone-dev/charts/releases/download/inventory-1.0.0/inventory-1.0.0.tgz
     version: 1.0.0
   marketplace-assets:
+  - apiVersion: v2
+    appVersion: 1.x.y
+    created: "2021-10-05T08:11:23.239338918Z"
+    description: SpaceONE marketplace-assets Helm chart for Kubernetes
+    digest: f7bd4b891650e148405904dbba764baff1a4a3b080d7edc21ed8cd0da8328e7d
+    name: marketplace-assets
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/marketplace-assets-1.1.1/marketplace-assets-1.1.1.tgz
+    version: 1.1.1
   - apiVersion: v2
     appVersion: 1.x.y
     created: "2021-03-30T05:09:04.407226506Z"
@@ -2752,4 +2752,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2021-10-05T08:11:19.113925291Z"
+generated: "2021-10-05T08:11:23.239733618Z"
