@@ -26,6 +26,7 @@ console:
         ENDPOINT: http://localhost:8081
       DOMAIN_NAME: root
       DOMAIN_NAME_REF: localhost
+
 console-api:
   enabled: true
   developer: false
@@ -52,6 +53,10 @@ console-api:
             level: info
             format: json
             path: "/var/log/spaceone/console-api.log"
+      escalation:
+        enabled: false
+        allowedDomainId: #root-domain
+        apiKey: #root-api-key
 
 identity:
     enabled: true
@@ -197,6 +202,10 @@ inventory:
             config:
                 host: spaceone-consul-server
             uri: root/api_key/TOKEN
+        HANDLERS:
+          authentication: []
+          authorization: []
+          mutation: []
  
 #
     volumeMounts:

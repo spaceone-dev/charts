@@ -49,14 +49,8 @@ repository:
     replicas: 1
     image:
       name: public.ecr.aws/megazone/spaceone/repository
-      version: 1.8.4
-    application_grpc:
-#        ROOT_TOKEN: ___CHANGE_YOUR_ROOT_TOKEN___ 
-        ROOT_TOKEN_INFO:
-            protocol: consul
-            config:
-                host: spaceone-consul-server
-            uri: root/api_key/TOKEN
+      version: 1.8.4.1
+
 
 plugin:
     enabled: true
@@ -114,7 +108,11 @@ inventory:
             config:
                 host: spaceone-consul-server
             uri: root/api_key/TOKEN
- 
+        HANDLERS:
+          authentication: []
+          authorization: []
+          mutation: []
+
 #
     volumeMounts:
         application_grpc: []

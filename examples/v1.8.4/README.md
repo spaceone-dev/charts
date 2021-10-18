@@ -69,8 +69,63 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 
 # Upgrade
 ## Changed Configuration
-- Upgrade image version
-  - -> 1.8.4
+### value.yaml
+- [ADD] inventory.application_worker.HANDLERS
+```diff
+    application_worker:
+#        TOKEN: ___CHANGE_YOUR_ROOT_TOKEN___ 
+        TOKEN_INFO:
+            protocol: consul
+            config:
+                host: spaceone-consul-server
+            uri: root/api_key/TOKEN
++       HANDLERS:
++         authentication: []
++         authorization: []
++         mutation: []
+```
+- [DELETE] repository.application_grpc
+```diff
+repository:
+    enabled: true
+    replicas: 1
+    image:
+      name: public.ecr.aws/megazone/spaceone/repository
+      version: 1.8.4
+-    application_grpc:
+-#        ROOT_TOKEN: ___CHANGE_YOUR_ROOT_TOKEN___ 
+-        ROOT_TOKEN_INFO:
+-            protocol: consul
+-            config:
+-                host: spaceone-consul-server
+-            uri: root/api_key/TOKEN
+```
+### frontend.yaml
+- [ADD] console-api.production_json.escalation
+```diff
+  production_json:
+      cors:
+      - http://*
+      - https://*
+#      - https://*.console.spaceone.dev
+#      - https://*.console.spaceone.dev:8080
+      redis:
+          host: redis
+          port: 6379
+          db: 15
+      logger:
+          handlers:
+          - type: console
+            level: debug
+          - type: file
+            level: info
+            format: json
+            path: "/var/log/spaceone/console-api.log"
++     escalation:
++       enabled: false
++       allowedDomainId: #root-domain
++       apiKey: #root-api-key
+```
 - Upgrade helm chart
 
 ~~~
