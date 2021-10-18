@@ -126,7 +126,8 @@ repository:
 +       allowedDomainId: #root-domain
 +       apiKey: #root-api-key
 ```
-- Upgrade helm chart
+
+### Upgrade helm chart
 
 ~~~
 kcd spaceone
