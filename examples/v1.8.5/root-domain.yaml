@@ -1,0 +1,26 @@
+enabled: true
+image:
+    name: spaceone/spacectl
+    version: 1.8.5
+skip_health_check: true
+domain: root
+main:
+  import:
+    - /root/spacectl/apply/root_domain.yaml
+    - /root/spacectl/apply/domain_role.yaml
+    - /root/spacectl/apply/project_role.yaml
+    - /root/spacectl/apply/repository.yaml
+    - /root/spacectl/apply/schema.yaml
+    - /root/spacectl/apply/register_plugins.yaml
+  var:
+    domain_name: root
+    domain_owner:
+      id: admin
+      password: Admin1234!@
+    user:
+      id: root_api_key
+    username: user1@example.com
+    password: User1234!
+    consul_server: spaceone-consul-server
+    plugin_repo : spaceone
+    tasks: []
