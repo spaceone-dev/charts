@@ -261,7 +261,7 @@ billing:
       version: 1.8.1
 
 notification:
-    enabled: false
+    enabled: true
     replicas: 1
     image:
       name: spaceone/notification
