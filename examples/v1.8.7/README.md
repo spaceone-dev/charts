@@ -126,7 +126,7 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 +              backend: spaceone.core.cache.redis_cache.RedisCache
 +              host: redis
 +              port: 6379
-+              db: 5
++              db: 15
 +              encoding: utf-8
 +              socket_timeout: 10
 +              socket_connect_timeout: 10
