@@ -106,6 +106,32 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 +    pod:
 +        spec: {}
 ```
+### database.yaml
+- [ADD] New database - cost-analysis
+```diff
++cost-analysis:
++    database:
++        DATABASES:
++            default:
++              username: ___CHANGE_YOUR_DB_USERNAME___
++              password: ___CHANGE_YOUR_DB_PASSWORD___
++              db: cost-analysis
++              host: ___CHANGE_YOUR_DOCDB_CLUSTER_HOSTNAME___
++              port: 27017
++              ssl: False
++              read_preference: PRIMARY
++              maxPoolSize: 200
++        CACHES:
++            default:
++              backend: spaceone.core.cache.redis_cache.RedisCache
++              host: redis
++              port: 6379
++              db: 5
++              encoding: utf-8
++              socket_timeout: 10
++              socket_connect_timeout: 10
+
+```
 ## DB
 ### index reset
 - apply all databases
