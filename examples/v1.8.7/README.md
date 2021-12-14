@@ -96,17 +96,6 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 +           KRW: 1178.7
 +           JPY: 114.2
 +           CNY: 6.3
-+       QUEUES:
-+           cost_analysis_q:
-+               backend: spaceone.core.queue.redis_queue.RedisQueue
-+               host: redis
-+               port: 6379
-+               channel: cost_analysis_job
-+       WORKERS:
-+           cost_analysis_worker:
-+               backend: spaceone.core.scheduler.worker.BaseWorker
-+               queue: cost_analysis_q
-+               pool: 1
 +
 +    volumeMounts:
 +        application: []
