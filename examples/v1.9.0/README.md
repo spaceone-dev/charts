@@ -71,6 +71,32 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 ## Changed Configuration
 ### image versions
 - 1.9.0
+- \+ (hotfix) cost-analysis 1.9.0.1
+
+### value.yaml
+- [ADD] cost-analysis.application_scheduler.TOKEN
+
+```diff
+cost-analysis:
+    enabled: true
+    scheduler: true
+    worker: true
+    replicas: 1
+    replicas_worker: 2
+    image:
+      name: public.ecr.aws/megazone/spaceone/cost-analysis
+      version: 1.9.0.1
+
++   # Overwrite scheduler config
++   application_scheduler:
++       TOKEN: <root_token>
+
+    application_grpc:
+        DEFAULT_EXCHANGE_RATE:
+            KRW: 1178.7
+            JPY: 114.2
+            CNY: 6.3
+```
 
 ### root-domain.yaml(Only when creating the initial root domain)
 ```diff
