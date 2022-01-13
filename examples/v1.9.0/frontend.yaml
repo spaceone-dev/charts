@@ -49,7 +49,7 @@ console:
       alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:111111111111:certificate/11111111-1111-111111111-111111111111
       alb.ingress.kubernetes.io/healthcheck-path: "/check"
       alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=60 # default 60
-      external-dns.alpha.kubernetes.io/hostname: "*.console.spaceone.dev"
+      external-dns.alpha.kubernetes.io/hostname: "*.console.example.com"
 
   pod:
     spec: {}
@@ -116,7 +116,7 @@ console-api:
         alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:111111111111:certificate/11111111-1111-1111-1111-111111111111
         alb.ingress.kubernetes.io/healthcheck-path: "/check"
         alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=600 # default 60
-        external-dns.alpha.kubernetes.io/hostname: console-api.spaceone.dev
+        external-dns.alpha.kubernetes.io/hostname: console-api.example.com
 
   pod:
     spec: {}
