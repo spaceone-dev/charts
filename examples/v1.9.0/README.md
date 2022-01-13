@@ -74,6 +74,42 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 - \+ (hotfix) cost-analysis 1.9.0.1
 
 ### value.yaml
+- (hotfix)[ADD] console.ingress.annotations
+```diff
+  ingress:
+    enabled: true
+    host: '*.console.spaceone.dev'   # host for ingress (ex. *.console.spaceone.dev)
+    annotations:
+      kubernetes.io/ingress.class: alb
+      alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+      alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
+      alb.ingress.kubernetes.io/inbound-cidrs: 0.0.0.0/0 # replace or leave out
+      alb.ingress.kubernetes.io/scheme: "internet-facing" # internet-facing
+      alb.ingress.kubernetes.io/target-type: instance # Your console and console-api should be NodePort for this configuration.
+      alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:111111111111:certificate/11111111-1111-111111111-111111111111
++     alb.ingress.kubernetes.io/healthcheck-path: "/check"
++     alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=60 # default 60
+      external-dns.alpha.kubernetes.io/hostname: "*.console.spaceone.dev"
+```
+
+- (hotfix)[ADD] console-api.ingress.annotations
+```diff
+  ingress:
+    enabled: true
+    host: 'console-api.spaceone.dev'   # host for ingress (ex. console-api.spaceone.dev)
+    annotations:
+        kubernetes.io/ingress.class: alb
+        alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+        alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
+        alb.ingress.kubernetes.io/inbound-cidrs: 0.0.0.0/0 # replace or leave out
+        alb.ingress.kubernetes.io/scheme: "internet-facing" # internet-facing
+        alb.ingress.kubernetes.io/target-type: instance # Your console and console-api should be NodePort for this configuration.
+        alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:111111111111:certificate/11111111-1111-1111-1111-111111111111
++       alb.ingress.kubernetes.io/healthcheck-path: "/check"
++       alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=60 # default 60
+        external-dns.alpha.kubernetes.io/hostname: console-api.spaceone.dev
+```
+
 - [ADD] cost-analysis.application_scheduler.TOKEN
 
 ```diff
