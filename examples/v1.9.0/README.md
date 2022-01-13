@@ -106,7 +106,7 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
         alb.ingress.kubernetes.io/target-type: instance # Your console and console-api should be NodePort for this configuration.
         alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:111111111111:certificate/11111111-1111-1111-1111-111111111111
 +       alb.ingress.kubernetes.io/healthcheck-path: "/check"
-+       alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=60 # default 60
++       alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=600 # default 60
         external-dns.alpha.kubernetes.io/hostname: console-api.spaceone.dev
 ```
 
