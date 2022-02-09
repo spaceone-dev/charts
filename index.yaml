@@ -644,6 +644,16 @@ entries:
   monitoring:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2022-02-09T04:49:45.900844382Z"
+    description: SpaceONE monitoring Helm chart for Kubernetes
+    digest: b4cf382b8c23f129c0860a72396b6c06be57c923b7d31ab05bdd6de2a21d9a43
+    name: monitoring
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/monitoring-1.3.16/monitoring-1.3.16.tgz
+    version: 1.3.16
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2021-06-29T12:09:15.206919985Z"
     description: SpaceONE monitoring Helm chart for Kubernetes
     digest: 9266b4e64e3149f49b1711059df3677b830d21b1ace5dbfbe66b5fa9d2e68038
@@ -3770,4 +3780,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2022-02-09T04:46:16.144535727Z"
+generated: "2022-02-09T04:49:45.901343685Z"
