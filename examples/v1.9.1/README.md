@@ -72,6 +72,7 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 ### image versions
 - 1.9.1
 - \+ (hotfix) identity 1.9.1.1
+- \+ (hotfix) console 1.9.1.1
 
 ### frontend.yaml
 - [ADD] console.production_json.CONTACT_LINK
@@ -83,7 +84,7 @@ console:
   replicas: 1
   image:
       name: public.ecr.aws/megazone/spaceone/console
-      version: 1.9.1
+      version: 1.9.1.1
   imagePullPolicy: IfNotPresent
 
 ...
