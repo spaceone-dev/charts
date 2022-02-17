@@ -225,19 +225,21 @@ monitoring:
     pod:
         spec: {}
 
-   ingress:
-       annotations:
-           kubernetes.io/ingress.class: alb
-           alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
-           alb.ingress.kubernetes.io/inbound-cidrs: 0.0.0.0/0 # replace or leave out
-           alb.ingress.kubernetes.io/scheme: internet-facing
-           alb.ingress.kubernetes.io/target-type: ip 
-           alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:ap-northeast-2:111111111111:certificate/11111111-458f-4c5f-b4c5-e3a2eb34caff"
-           alb.ingress.kubernetes.io/healthcheck-path: "/check"
-           alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=600
-           external-dns.alpha.kubernetes.io/hostname: monitoring-webhook.example.com
-       servicePort: 80
-       path: /*
+    ingress:
+      rest:
+        enabled: true
+        annotations:
+            kubernetes.io/ingress.class: alb
+            alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+            alb.ingress.kubernetes.io/inbound-cidrs: 0.0.0.0/0 # replace or leave out
+            alb.ingress.kubernetes.io/scheme: internet-facing
+            alb.ingress.kubernetes.io/target-type: ip 
+            alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:ap-northeast-2:111111111111:certificate/11111111-458f-4c5f-b4c5-e3a2eb34caff"
+            alb.ingress.kubernetes.io/healthcheck-path: "/check"
+            alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=600
+            external-dns.alpha.kubernetes.io/hostname: monitoring-webhook.example.com
+        servicePort: 80
+        path: /*
 
 statistics:
     enabled: true
