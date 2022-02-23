@@ -162,7 +162,7 @@ db.public_dashboard.updateMany({}, {$rename: {dashboard_id: "public_dashboard_id
 ### root-domain.yaml(Only when creating the initial root domain)
 - [ADD] default_language 
 - [ADD] default_timezone
-- [HOTFIX] Add
+- [HOTFIX] Add policy type and id for role
 ```diff
 enabled: true
 image:
