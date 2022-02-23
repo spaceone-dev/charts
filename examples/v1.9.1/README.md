@@ -162,6 +162,7 @@ db.public_dashboard.updateMany({}, {$rename: {dashboard_id: "public_dashboard_id
 ### root-domain.yaml(Only when creating the initial root domain)
 - [ADD] default_language 
 - [ADD] default_timezone
+- [HOTFIX] Add
 ```diff
 enabled: true
 image:
@@ -184,6 +185,14 @@ main:
       id: root_api_key
     consul_server: spaceone-consul-server
     marketplace_endpoint: grpc://repository.portal.spaceone.dev:50051
++   project_admin_policy_type: MANAGED
++   project_admin_policy_id: policy-managed-project-admin
++   project_viewer_policy_type: MANAGED
++   project_viewer_policy_id: policy-managed-project-viewer
++   domain_admin_policy_type: MANAGED
++   domain_admin_policy_id: policy-managed-domain-admin
++   domain_viewer_policy_type: MANAGED
++   domain_viewer_policy_id: policy-managed-domain-viewer
   tasks: []
 ```
 
