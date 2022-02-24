@@ -410,6 +410,16 @@ entries:
   docs:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2022-02-24T10:08:23.335654088Z"
+    description: SpaceONE Open-Source Project Site Helm chart for Kubernetes
+    digest: 5c0c16fa32c8ffc5e77babda0e65f72534578945e073be2e84eedf9a7f2641eb
+    name: docs
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/docs-2.1.0/docs-2.1.0.tgz
+    version: 2.1.0
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2021-08-27T01:48:33.151409153Z"
     description: SpaceONE Open-Source Project Site Helm chart for Kubernetes
     digest: 117ffaeb4cdcf31f322487a23993019031560480db66e317286cfc3042b359c3
@@ -3982,4 +3992,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2022-02-23T06:57:10.709124704Z"
+generated: "2022-02-24T10:08:23.336419112Z"
