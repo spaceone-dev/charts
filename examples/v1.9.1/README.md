@@ -197,6 +197,57 @@ main:
   tasks: []
 ```
 
+### user-domain.yaml(New)
+```diff
++enabled: true
++image:
++    name: spaceone/spacectl
++    version: 1.9.1
++domain: user
++main:
++  import:
++    - /root/spacectl/apply/local_domain.yaml
++    - /root/spacectl/apply/statistics.yaml
++
++  var:
++    domain_name: spaceone
++    default_language: ko
++    default_timezone: Asia/Seoul
++    domain_owner: admin
++    domain_owner_password: Admin123!@#
++    project_admin_policy_type: MANAGED
++    project_admin_policy_id: policy-managed-project-admin
++    project_viewer_policy_type: MANAGED
++    project_viewer_policy_id: policy-managed-project-viewer
++    domain_admin_policy_type: MANAGED
++    domain_admin_policy_id: policy-managed-domain-admin
++    domain_viewer_policy_type: MANAGED
++    domain_viewer_policy_id: policy-managed-domain-viewer
++
++
++  tasks: []
+```
+
+### minikube.yaml
+- [Modify] console.production_json.DOMAIN_NAME
+```diff
+console:
+  enabled: true
+  developer: false
+  name: console
+  replicas: 1
+  image:
+      name: spaceone/console
+      version: 1.9.1
+  imagePullPolicy: IfNotPresent
+
+  production_json:
+      CONSOLE_API:
+        ENDPOINT: http://localhost:8081
++     DOMAIN_NAME: root
+-     DOMAIN_NAME: spaceone
+      DOMAIN_NAME_REF: localhost
+```
 ## Upgrade helm chart
 
 ~~~
