@@ -24,7 +24,7 @@ console:
   production_json:
       CONSOLE_API:
         ENDPOINT: http://localhost:8081
-      DOMAIN_NAME: root
+      DOMAIN_NAME: spaceone
       DOMAIN_NAME_REF: localhost
 
   pod:
