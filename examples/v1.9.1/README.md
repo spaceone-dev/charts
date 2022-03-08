@@ -181,7 +181,7 @@ main:
 +   default_timezone: Asia/Seoul
     domain_owner:
       id: admin
-      password: Adminpassword
+      password: Admin123!@#
     user:
       id: root_api_key
     consul_server: spaceone-consul-server
