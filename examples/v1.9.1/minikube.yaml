@@ -517,11 +517,14 @@ spaceone-initializer:
     import:
       - /root/spacectl/apply/root_domain.yaml 
       - /root/spacectl/apply/marketplace.yaml
+      - /root/spacectl/apply/role.yaml
     var:
       domain_name: root
+      default_language: ko
+      default_timezone: Asia/Seoul
       domain_owner:
         id: admin
-        password: Adminpassword
+        password: Admin123!@#
       user:
         id: root_api_key
       consul_server: spaceone-consul-server
