@@ -358,7 +358,7 @@ power-scheduler:
         spec: {}
 
 cost-analysis:
-    enabled: true
+    enabled: false
     scheduler: false
     worker: true
     replicas: 1
