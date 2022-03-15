@@ -71,6 +71,9 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 ## Changed Configuration
 ### image versions
 - 1.9.3
+- hotfix
+  - console 1.9.3.1
+  - console-api 1.9.3.1
 
 ### root-domain.yaml(Only when creating the initial root domain)
 - [ADD] main.import.role.yaml
