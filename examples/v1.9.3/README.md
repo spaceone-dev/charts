@@ -72,7 +72,7 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 ### image versions
 - 1.9.3
 - hotfix
-  - console 1.9.3.1
+  - console 1.9.3.2
   - console-api 1.9.3.1
 
 ### root-domain.yaml(Only when creating the initial root domain)
@@ -162,6 +162,19 @@ console:
 -     DOMAIN_NAME: spaceone
       DOMAIN_NAME_REF: localhost
 ```
+
+## DB patch
+- cost-analysis
+
+```
+use cost-analysis;
+db.budget.find().forEach(function (item){
+    var start = item.start.toISOString().substr(0,7); 
+    var end = item.end.toISOString().substr(0,7);
+    db.budget.updateOne({_id: item._id}, {$set: {start: start, end: end}})
+})
+```
+
 ## Upgrade helm chart
 
 ~~~
