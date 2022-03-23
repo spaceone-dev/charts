@@ -4065,6 +4065,16 @@ entries:
   statistics:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2022-03-23T08:55:53.246037429Z"
+    description: SpaceONE statistics Helm chart for Kubernetes
+    digest: 535192e7f9512a7126562ab2a6a545f16af9eb287ea8631fc5e0d63852d0424b
+    name: statistics
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/statistics-1.3.8/statistics-1.3.8.tgz
+    version: 1.3.8
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2021-12-15T08:09:47.262187081Z"
     description: SpaceONE statistics Helm chart for Kubernetes
     digest: 2cf0d08cd6fc3c18987ffc3c3f6a8baffbb6c0f77c345e480d4fb9287f7fbc66
@@ -4194,4 +4204,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2022-03-10T10:21:24.054907922Z"
+generated: "2022-03-23T08:55:53.246822965Z"
