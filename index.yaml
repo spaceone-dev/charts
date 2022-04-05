@@ -4306,6 +4306,16 @@ entries:
   supervisor:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2022-04-05T07:21:46.157308875Z"
+    description: SpaceONE supervisor Helm chart for Kubernetes
+    digest: 0d715d2c0537dcb783342c40f9b051090c3ea1bc1b4a1135c202654c2c9f729d
+    name: supervisor
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.1.5/supervisor-1.1.5.tgz
+    version: 1.1.5
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2021-11-22T01:23:48.200540971Z"
     description: SpaceONE supervisor Helm chart for Kubernetes
     digest: 8d7ffb016de0176c1c19bc6aa7e34529339aaa081372219acb94c2af58b83b36
@@ -4364,4 +4374,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2022-04-05T07:20:08.049687715Z"
+generated: "2022-04-05T07:21:46.157848698Z"
