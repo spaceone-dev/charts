@@ -23,7 +23,7 @@ console:
     CONSOLE_API:
         ENDPOINT: https://console-api.spaceone.dev
     CONTACT_LINK: <enter_your_site_url_or_email> # Change the contact us link of sign in page
-    BILLIGN_ENABLED:
+    BILLING_ENABLED:
     - <domain_id>
 
 #    GTAG_ID: UA-111111111-1

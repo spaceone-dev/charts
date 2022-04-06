@@ -26,7 +26,7 @@ console:
         ENDPOINT: http://localhost:8081
       DOMAIN_NAME: spaceone
       DOMAIN_NAME_REF: localhost
-      BILLIGN_ENABLED: []
+      BILLING_ENABLED: []
 
   pod:
     spec: {}

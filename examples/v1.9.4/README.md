@@ -107,7 +107,7 @@ helm upgrade aws-load-balancer-controller eks/aws-load-balancer-controller -n ku
 ```
 
 ### frontend.yaml
-- [Add] console.production_json.BILLIGN_ENABLED
+- [Add] console.production_json.BILLING_ENABLED
 ```diff
 console:
   enabled: true
@@ -131,8 +131,8 @@ console:
     CONSOLE_API:
         ENDPOINT: https://console-api.spaceone.dev
     CONTACT_LINK: <enter_your_site_url_or_email> # Change the contact us link of sign in page
-+   BILLIGN_ENABLED: [] # If you don't want to activate the billing page
-+   BILLIGN_ENABLED: 
++   BILLING_ENABLED: [] # If you don't want to activate the billing page
++   : 
 +   - <domain_id>
 ```
 - [Add] console-api.production_json.billingV2
