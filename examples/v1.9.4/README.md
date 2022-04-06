@@ -81,7 +81,7 @@ helm upgrade aws-load-balancer-controller eks/aws-load-balancer-controller -n ku
 ### image versions
 - 1.9.4
 - hotfix
-  - console 1.9.4.2
+  - console 1.9.4.3
   - console-api 1.9.4.1
   - cost-analysis 1.9.4.2
 
