@@ -26,6 +26,7 @@ console:
         ENDPOINT: http://localhost:8081
       DOMAIN_NAME: spaceone
       DOMAIN_NAME_REF: localhost
+      BILLIGN_ENABLED: []
 
   pod:
     spec: {}
@@ -48,6 +49,7 @@ console-api:
           host: redis
           port: 6379
           db: 15
+      billingV2: []
       logger:
           handlers:
           - type: console
