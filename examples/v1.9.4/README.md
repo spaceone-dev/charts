@@ -249,7 +249,7 @@ main:
 enabled: true
 image:
     name: spaceone/spacectl
-    version: 1.9.3
+    version: 1.9.4
 main:
   import:
     - /root/spacectl/apply/root_domain.yaml 
