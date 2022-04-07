@@ -81,8 +81,8 @@ helm upgrade aws-load-balancer-controller eks/aws-load-balancer-controller -n ku
 ### image versions
 - 1.9.4
 - hotfix
-  - console 1.9.4.3
-  - console-api 1.9.4.1
+  - console 1.9.4.4
+  - console-api 1.9.4.2
   - cost-analysis 1.9.4.2
 
 ### {all}.yaml
@@ -132,7 +132,7 @@ console:
         ENDPOINT: https://console-api.spaceone.dev
     CONTACT_LINK: <enter_your_site_url_or_email> # Change the contact us link of sign in page
 +   BILLING_ENABLED: [] # If you don't want to activate the billing page
-+   : 
++   BILLING_ENABLED: 
 +   - <domain_id>
 ```
 - [Add] console-api.production_json.billingV2
