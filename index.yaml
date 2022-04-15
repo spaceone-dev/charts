@@ -85,6 +85,16 @@ entries:
   board:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2022-04-15T05:06:55.862809856Z"
+    description: SpaceONE board Helm chart for Kubernetes
+    digest: 84255757ed4b9360f1c45616d39c3fa9fc71766f0b4caf1e6d572ea50f047a74
+    name: board
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/board-1.3.8/board-1.3.8.tgz
+    version: 1.3.8
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2022-04-15T04:54:18.388794359Z"
     description: SpaceONE board Helm chart for Kubernetes
     digest: 2cff2d3e8e8657fdee77e4f3d50a80d81be137db5880d21d5d4c8b4d7ed37607
@@ -4905,4 +4915,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2022-04-15T04:54:18.389456564Z"
+generated: "2022-04-15T05:06:55.863563061Z"
