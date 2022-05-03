@@ -67,16 +67,6 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 ~~~
 
 
-# Upgrade
-## [Upgrade aws-load-balancer-controller(>= v2.4.1)](https://github.com/kubernetes-sigs/aws-load-balancer-controller/releases)
-> ingress apiVersion in helm template has been updated from `extensions/v1beta1` to `networking.k8s.io/v1` and aws-load-balancer-controller must be upgraded to support this template.
-```
-helm update repo
-```
-```
-helm upgrade aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system --set clusterName=<cluster-name>
-```
-
 ## Changed Configuration
 ### image versions
 - 1.9.6
