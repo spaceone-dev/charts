@@ -18,7 +18,7 @@ console:
   replicas: 1
   image:
       name: spaceone/console
-      version: 1.9.6
+      version: 1.9.6.1
   imagePullPolicy: IfNotPresent
 
   production_json:
