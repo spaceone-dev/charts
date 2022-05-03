@@ -66,7 +66,7 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 
 ~~~
 
-
+# Upgrade
 ## Changed Configuration
 ### image versions
 - 1.9.6
