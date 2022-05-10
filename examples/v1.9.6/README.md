@@ -71,7 +71,7 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 ### image versions
 - 1.9.6
 - hotfix
-    - console 1.9.6.1
+    - console 1.9.6.2
 
 ## Upgrade helm chart
 
