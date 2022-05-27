@@ -74,10 +74,9 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
     - plugin: 1.9.7.1
     - console-api: 1.9.7.1
 
-### values.yaml
+### frontend.yaml
 
 - [DELETE] console.production_json.DISABLED_MENU
-
 ``` diff
 -   DISABLED_MENU:
 -   - alert_manager
@@ -92,9 +91,9 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 -     - domain-id
 -     - domain-id
 ```
+### values.yaml
 
 - [DELETE] billing(deprecated)
-
 ```diff
 -billing:
 -    enabled: false
