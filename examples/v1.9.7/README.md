@@ -75,17 +75,26 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
     - console-api: 1.9.7.1
 
 ### values.yaml
-- [ADD] notification.application_grpc
-```diff
-# ex: 'PROTOCOL_PLUGIN_ID': {'month': QUOTA, 'day': QUOTA},
-+        DEFAULT_QUOTA:
-+            plugin-sms-notification-protocol:
-+              month: 10000
-+            plugin-voicecall-notification-protocol:
-+              month: 1000
 
+- [DELETE] console.production_json.DISABLED_MENU
+
+``` diff
+-   DISABLED_MENU:
+-   - alert_manager
+-   - asset_inventory.collector_history
+-   - asset_inventory.collector
 ```
+
+- [DELETE] console-api.production_json.billingV2
+```diff
+-     billingV2:
+-     - domain-id
+-     - domain-id
+-     - domain-id
+```
+
 - [DELETE] billing(deprecated)
+
 ```diff
 -billing:
 -    enabled: false
@@ -96,42 +105,6 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 -
 -    pod:
 -        spec: {}
-```
-
-### Delete hyperbilling service_account, provider
-- delete secret data
-```
-spacectl list secret.Secret -p provider=hyperbilling -p domain_id=<domain_id>
-spacectl exec delete secret.Secret -p secret_id=<secret_id> -p domain_id=<domain_id>
-```
-- delete service account
-```
-spacectl list service_account -p provider=hyperbilling -p domain_id=<domain_id>
-spacectl exec delete service_account -p service_account_id=<service_account_id> -p domain_id=<domain_id>
-```
-- delete provider
-```
-spacectl exec delete provider -p provider=hyperbilling -p domain_id=<domain_id>
-```
-
-### Update policy
-> Before proceeding with this you must ensure that the role using 'policy-0386cce2730b' exists and delete it.
-
-- delete Managed policy
-```
-spacectl exec delete repository.Policy -p policy_id=policy-managed-alert-manager-full-access
-
-spacectl exec delete repository.Policy -p policy_id=policy-0386cce2730b
-```
-
-- create new managed policy
-```
-TODO
-```
-
-- Update roles for all domains
-```
-script
 ```
 
 ## DB patch
