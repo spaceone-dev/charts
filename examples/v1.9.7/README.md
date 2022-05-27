@@ -134,6 +134,12 @@ TODO
 script
 ```
 
+## DB patch
+```
+use identity
+db.policy.dropIndex('policy_id_1_domain_id_1')
+```
+
 ## Upgrade helm chart
 
 ~~~
