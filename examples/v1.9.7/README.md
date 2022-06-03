@@ -73,6 +73,7 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
     - identity : 1.9.7.2
     - plugin: 1.9.7.1
     - console-api: 1.9.7.1
+    - console: 1.9.7.7
 
 ### frontend.yaml
 
