@@ -1369,6 +1369,17 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/secret-1.0.0/secret-1.0.0.tgz
     version: 1.0.0
+  service-portal:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-06-13T02:35:57.423971985Z"
+    description: SpaceONE service-portal Helm chart for Kubernetes
+    digest: dccc6fd9e3f6281f649e486421a66e72dec8cb6a07d4c6fce6a071b847b3a286
+    name: service-portal
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/service-portal-1.0.0/service-portal-1.0.0.tgz
+    version: 1.0.0
   spaceone:
   - apiVersion: v2
     appVersion: 1.9.7
@@ -5475,4 +5486,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2022-05-26T12:27:55.930615555Z"
+generated: "2022-06-13T02:35:57.424925598Z"
