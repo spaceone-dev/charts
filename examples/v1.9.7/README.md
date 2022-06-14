@@ -70,10 +70,17 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 ## Changed Configuration
 ### image versions
 - 1.9.7
-    - identity : 1.9.7.2
-    - plugin: 1.9.7.1
-    - console-api: 1.9.7.1
-    - console: 1.9.7.7
+    - console: 1.9.7.10
+    - config: 1.9.7.1
+    - cost-analysis: 1.9.7.1
+    - identity: 1.9.7.3
+    - inventory: 1.9.7.2
+    - monitoring: 1.9.7.1
+    - notification: 1.9.7.1
+    - plugin: 1.9.7.2
+    - repository: 1.9.7.1
+    - secret: 1.9.7.1
+    - statistics: 1.9.7.1
 
 ### frontend.yaml
 
