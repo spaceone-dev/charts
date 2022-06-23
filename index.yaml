@@ -986,6 +986,16 @@ entries:
   notification:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2022-06-23T05:27:51.792141882Z"
+    description: SpaceONE notification Helm chart for Kubernetes
+    digest: 0d6c1349992b6213d26690a553286afe2710859945068f9b9886d0662fd4e5c3
+    name: notification
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/notification-1.3.12/notification-1.3.12.tgz
+    version: 1.3.12
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2022-06-23T00:48:37.669680799Z"
     description: SpaceONE notification Helm chart for Kubernetes
     digest: 3c7f499ece4da6951ebd67cd872398539aa06f04376b089ded48df6f500ea451
@@ -5546,4 +5556,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2022-06-23T00:48:37.670522203Z"
+generated: "2022-06-23T05:27:51.799765227Z"
