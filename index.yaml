@@ -1423,6 +1423,16 @@ entries:
   service-portal-api:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2022-07-22T15:17:23.342997102Z"
+    description: SpaceONE Service Portal API Helm chart for Kubernetes
+    digest: 7866ce99f72460f5c335daa61d2501403161f44f8db80e5ba258cecbac7d68e6
+    name: service-portal-api
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/service-portal-api-1.0.4/service-portal-api-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2022-07-22T08:04:02.147302737Z"
     description: SpaceONE Service Portal API Helm chart for Kubernetes
     digest: f2e41ffa8d751f085e4e7f7d0001e29c5f25c27f65f32fe2f9dee1006db2330c
@@ -5728,4 +5738,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2022-07-22T09:55:01.864703379Z"
+generated: "2022-07-22T15:17:23.34399212Z"
