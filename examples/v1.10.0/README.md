@@ -69,56 +69,39 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 # Upgrade
 ## Changed Configuration
 ### image versions
-- 1.9.7
-    - console: 1.10.0
-    - config: 1.10.0
-    - cost-analysis: 1.10.0
-    - identity: 1.10.0
-    - inventory: 1.10.0
-    - monitoring: 1.10.0
-    - notification: 1.10.0
-    - plugin: 1.10.0
-    - repository: 1.10.0
-    - secret: 1.10.0
-    - statistics: 1.10.0
+- 1.10.0
+    - console: 1.10.0.3
+    - inventory: 1.10.0.2
 
-### frontend.yaml
-
-- [DELETE] console.production_json.DISABLED_MENU
-``` diff
--   DISABLED_MENU:
--   - alert_manager
--   - asset_inventory.collector_history
--   - asset_inventory.collector
+### DB patch
+- Update statistics history label
+```
+use statistics;
+db.history.updateMany({'values.label': 'Compute'}, {$set: {'values.label': 'Server’}})
 ```
 
-- [DELETE] console-api.production_json.billingV2
-```diff
--     billingV2:
--     - domain-id
--     - domain-id
--     - domain-id
+- Reset table schema for Server Table
 ```
-### values.yaml
-
-- [DELETE] billing(deprecated)
-```diff
--billing:
--    enabled: false
--    replicas: 1
--    image:
--      name: public.ecr.aws/megazone/spaceone/billing
--      version: 1.9.7
--
--    pod:
--        spec: {}
+use config;
+db.user_config.find({name: /console:USER:.*:page-schema:inventory.*:table/})
+db.user_config.deleteMany({name: /console:USER:.*:page-schema:inventory.*:table/})
 ```
 
-## DB patch
+- Remove some fields from Cloud Service
 ```
-use identity
-db.policy.dropIndex('policy_id_1_domain_id_1')
+use inventory;
+db.cloud_service.updateMany({}, {$unset: {"collection_info.pinned_keys": ""}})
+db.cloud_service.updateMany({}, {$unset: {"collection_info.change_history”: ""}})
+db.cloud_service.updateMany({}, {$unset: {"launched_at": ""}})
 ```
+
+- Remove server data from Collection_State
+```
+use inventory
+db.collection_state.find({resource_type: "inventory.Server"})
+db.collection_state.deleteMany({resource_type: "inventory.Server"})
+```
+
 
 ## Upgrade helm chart
 
