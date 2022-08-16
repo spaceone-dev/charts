@@ -70,7 +70,7 @@ helm install spaceone -f values.yaml -f frontend.yaml -f database.yaml spaceone/
 ## Changed Configuration
 ### image versions
 - 1.10.0
-    - console: 1.10.0.4
+    - console: 1.10.0.5
     - inventory: 1.10.0.6
     - identity: 1.10.0.1
 
