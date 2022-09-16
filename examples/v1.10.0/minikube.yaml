@@ -18,7 +18,7 @@ console:
   replicas: 1
   image:
       name: spaceone/console
-      version: 1.10.0.2
+      version: 1.10.0.5
   imagePullPolicy: IfNotPresent
 
   production_json:
@@ -70,7 +70,7 @@ identity:
     replicas: 1
     image:
       name: spaceone/identity
-      version: 1.10.0
+      version: 1.10.0.1
     imagePullPolicy: Always
 
     application_grpc:
@@ -198,7 +198,7 @@ inventory:
     replicas_worker: 1
     image:
       name: spaceone/inventory
-      version: 1.10.0
+      version: 1.10.0.6
     scheduler: true
     worker: true
     application_grpc:
@@ -375,7 +375,7 @@ supervisor:
     enabled: true
     image:
       name: spaceone/supervisor
-      version: 1.9.7
+      version: 1.10.0
     application: {}
     application_scheduler:
         NAME: root
@@ -420,10 +420,10 @@ spaceone-initializer:
       version: 1.10.0
   main:
     import:
-      - /root/spacectl/apply/root_domain.yaml 
+      - /root/spacectl/apply/root_domain.yaml
       - /root/spacectl/apply/marketplace.yaml
-      - /root/spacectl/apply/role.yaml
       - /root/spacectl/apply/user_domain.yaml
+      - /root/spacectl/apply/role.yaml
       - /root/spacectl/apply/statistics.yaml
     var:
       domain:
@@ -438,13 +438,9 @@ spaceone-initializer:
         id: root_api_key
       consul_server: spaceone-consul-server
       marketplace_endpoint: grpc://repository.portal.spaceone.dev:50051
-      project_admin_policy_type: MANAGED
-      project_admin_policy_id: policy-managed-project-admin
-      project_viewer_policy_type: MANAGED
+      project_manager_policy_id: policy-managed-project-manager
       project_viewer_policy_id: policy-managed-project-viewer
-      domain_admin_policy_type: MANAGED
       domain_admin_policy_id: policy-managed-domain-admin
-      domain_viewer_policy_type: MANAGED
       domain_viewer_policy_id: policy-managed-domain-viewer
     tasks: []
 
