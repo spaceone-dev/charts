@@ -528,6 +528,17 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/cost-saving-1.0.0/cost-saving-1.0.0.tgz
     version: 1.0.0
+  dashboard:
+  - apiVersion: v2
+    appVersion: 1.x.y
+    created: "2022-11-11T06:44:55.214781179Z"
+    description: SpaceONE dashboard Helm chart for Kubernetes
+    digest: f9e76310ed1dbed086d71471c7319b07d87615fd2e50613a8d4659ef376383d8
+    name: dashboard
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/dashboard-1.3.8/dashboard-1.3.8.tgz
+    version: 1.3.8
   docs:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -6397,4 +6408,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2022-11-03T05:12:21.699545205Z"
+generated: "2022-11-11T06:44:55.2250965Z"
