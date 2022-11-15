@@ -406,6 +406,17 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/console-api-1.0.0/console-api-1.0.0.tgz
     version: 1.0.0
+  console-api-v2:
+  - apiVersion: v2
+    appVersion: 1.x.y
+    created: "2022-11-15T10:21:18.735935189Z"
+    description: Cloudforet Console API v2 Helm chart for Kubernetes
+    digest: 3c55786e4ecac480d67b115f02fdcc8e00aff6e24a7c62df0d05a9be10711c10
+    name: console-api-v2
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/console-api-v2-1.0.0/console-api-v2-1.0.0.tgz
+    version: 1.0.0
   cost-analysis:
   - apiVersion: v2
     appVersion: 1.x.y
@@ -6408,4 +6419,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2022-11-11T06:44:55.2250965Z"
+generated: "2022-11-15T10:21:18.737446986Z"
