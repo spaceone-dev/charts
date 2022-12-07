@@ -136,6 +136,16 @@ entries:
   config:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2022-12-07T11:07:00.325815511Z"
+    description: SpaceONE config Helm chart for Kubernetes
+    digest: 2710632f0ac1579ffed1ef58da3bd4b5dba971a73033457803269572b66ef6bc
+    name: config
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/config-1.3.8/config-1.3.8.tgz
+    version: 1.3.8
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2022-04-05T06:27:14.210193595Z"
     description: SpaceONE config Helm chart for Kubernetes
     digest: 1208758e8b94454f6838908374bf6b00c5d51f09ed72a30586e1741a49ee7121
@@ -6641,4 +6651,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2022-12-07T11:02:03.83330519Z"
+generated: "2022-12-07T11:07:00.326805516Z"
