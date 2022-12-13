@@ -217,16 +217,6 @@ entries:
   console:
   - apiVersion: v2
     appVersion: 1.x.y
-    created: "2022-12-13T07:50:26.601915112Z"
-    description: SpaceONE console Helm chart for Kubernetes
-    digest: b90c0e9f65b0f092b6335233a30c4104056d43369d4bffaf0880b67f8f3086d7
-    name: console
-    type: application
-    urls:
-    - https://github.com/spaceone-dev/charts/releases/download/console-1.2.11/console-1.2.11.tgz
-    version: 1.2.11
-  - apiVersion: v2
-    appVersion: 1.x.y
     created: "2022-12-07T11:08:32.339870143Z"
     description: SpaceONE console Helm chart for Kubernetes
     digest: 12c4d804c5de42c0386505d384e80b6c625df097b05d9cd6f1bfb331f008b1f3
@@ -1716,6 +1706,102 @@ entries:
     - https://github.com/spaceone-dev/charts/releases/download/service_portal_api-1.0.0/service_portal_api-1.0.0.tgz
     version: 1.0.0
   spaceone:
+  - apiVersion: v2
+    appVersion: 1.10.4
+    created: "2022-12-13T08:17:57.377082734Z"
+    dependencies:
+    - condition: console.enabled
+      name: console
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: console-api.enabled
+      name: console-api
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: identity.enabled
+      name: identity
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: secret.enabled
+      name: secret
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: repository.enabled
+      name: repository
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: plugin.enabled
+      name: plugin
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: config.enabled
+      name: config
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: inventory.enabled
+      name: inventory
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: monitoring.enabled
+      name: monitoring
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: statistics.enabled
+      name: statistics
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: cost-analysis.enabled
+      name: cost-analysis
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: notification.enabled
+      name: notification
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: board.enabled
+      name: board
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: file-manager.enabled
+      name: file-manager
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: dashboard.enabled
+      name: dashboard
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: console-api-v2.enabled
+      name: console-api-v2
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: marketplace-assets.enabled
+      name: marketplace-assets
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: supervisor.enabled
+      name: supervisor
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: supervisor.enabled
+      name: spaceone-initializer
+      repository: https://spaceone-dev.github.io/charts
+      version: '>=1.0.0'
+    - condition: vault.enabled
+      name: vault
+      repository: ""
+      version: '>=0.1.0'
+    - condition: consul.enabled
+      name: consul
+      repository: https://helm.releases.hashicorp.com
+      version: '>=0.1.0'
+    description: A Helm chart for SpaceONE
+    digest: c0ae0271465999e44d5c8f515835a354e16674896001dbe90a4a7834fba4af0a
+    home: https://www.spaceone.org
+    name: spaceone
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/spaceone-1.10.5-dev5/spaceone-1.10.5-dev5.tgz
+    version: 1.10.5-dev5
   - apiVersion: v2
     appVersion: 1.10.4
     created: "2022-12-13T07:40:26.515993173Z"
@@ -7235,4 +7321,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2022-12-13T07:50:26.603263638Z"
+generated: "2022-12-13T08:17:57.378188239Z"
