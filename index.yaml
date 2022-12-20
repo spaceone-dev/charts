@@ -1765,6 +1765,17 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/service_portal_api-1.0.0/service_portal_api-1.0.0.tgz
     version: 1.0.0
+  spacectl:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-12-20T01:43:13.141748388Z"
+    description: A spacectl chart for Kubernetes
+    digest: 3732a58863569e67fedf03e3f097f460c2da606b6ee3f69021dc5dd4338da02d
+    name: spacectl
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/spacectl-0.1.0/spacectl-0.1.0.tgz
+    version: 0.1.0
   spaceone:
   - apiVersion: v2
     appVersion: 1.10.4
@@ -7381,4 +7392,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2022-12-19T01:39:44.151929191Z"
+generated: "2022-12-20T01:43:13.142839228Z"
