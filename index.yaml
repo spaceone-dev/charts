@@ -1107,6 +1107,16 @@ entries:
   marketplace-assets:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2023-01-09T08:51:48.665700786Z"
+    description: SpaceONE marketplace-assets Helm chart for Kubernetes
+    digest: 362afa8067cf4ecd11c19c88dcddad8e94c6dd8cb2c23001c7558f93eea17fff
+    name: marketplace-assets
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/marketplace-assets-1.1.6/marketplace-assets-1.1.6.tgz
+    version: 1.1.6
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2022-12-07T11:21:22.853192769Z"
     description: SpaceONE marketplace-assets Helm chart for Kubernetes
     digest: a3b0aa72fc5ff8acfe29b2c3832384901dd7da990df13a27b15333feffc26df9
@@ -7502,4 +7512,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2023-01-09T08:50:24.346718375Z"
+generated: "2023-01-09T08:51:48.666849607Z"
