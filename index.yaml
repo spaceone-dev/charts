@@ -1968,6 +1968,16 @@ entries:
   spacectl:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-05-03T05:50:04.982722125Z"
+    description: A spacectl chart for Kubernetes
+    digest: 3ba5001f2d1d86c3802f443112b710d3a7d90525f7a33a8afde918e8bd6327be
+    name: spacectl
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/spacectl-1.0.0/spacectl-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-05-03T05:48:35.018097298Z"
     description: A spacectl chart for Kubernetes
     digest: e077442c1a765203f56e08de73be51377ad2c6bc98352eae410eb7ecfc21b6c7
@@ -8252,4 +8262,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2023-05-03T05:48:35.01983892Z"
+generated: "2023-05-03T05:50:04.984359184Z"
