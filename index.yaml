@@ -1967,6 +1967,16 @@ entries:
     version: 1.0.0
   spacectl:
   - apiVersion: v2
+    appVersion: 1.0.3
+    created: "2023-05-03T07:57:38.313147409Z"
+    description: A spacectl chart for Kubernetes
+    digest: 2df324b485c81509193a7f03e34de0bb8c01bcc2edddf721510d43412cbfd6a6
+    name: spacectl
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/spacectl-1.0.3/spacectl-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v2
     appVersion: 1.0.0
     created: "2023-05-03T05:50:04.982722125Z"
     description: A spacectl chart for Kubernetes
@@ -2007,98 +2017,6 @@ entries:
     - https://github.com/spaceone-dev/charts/releases/download/spacectl-0.1.0/spacectl-0.1.0.tgz
     version: 0.1.0
   spaceone:
-  - apiVersion: v2
-    appVersion: 1.11.1
-    created: "2023-05-03T07:37:09.141747622Z"
-    dependencies:
-    - condition: console.enabled
-      name: console
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: console-api.enabled
-      name: console-api
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: identity.enabled
-      name: identity
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: secret.enabled
-      name: secret
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: repository.enabled
-      name: repository
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: plugin.enabled
-      name: plugin
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: config.enabled
-      name: config
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: inventory.enabled
-      name: inventory
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: monitoring.enabled
-      name: monitoring
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: statistics.enabled
-      name: statistics
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: cost-analysis.enabled
-      name: cost-analysis
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: notification.enabled
-      name: notification
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: board.enabled
-      name: board
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: file-manager.enabled
-      name: file-manager
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: dashboard.enabled
-      name: dashboard
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: console-api-v2.enabled
-      name: console-api-v2
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: supervisor.enabled
-      name: supervisor
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: marketplace-assets.enabled
-      name: marketplace-assets
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: docs.enabled
-      name: docs
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    - condition: spacectl.enabled
-      name: spacectl
-      repository: https://cloudforet-io.github.io/charts
-      version: '>=1.0.0'
-    description: A Helm chart for SpaceONE
-    digest: cec56a1b6b563e2bfdf301e7bea8cac85dc3f001f7155971beaaf43cb5e0f7b4
-    home: https://www.spaceone.org
-    name: spaceone
-    type: application
-    urls:
-    - https://github.com/spaceone-dev/charts/releases/download/spaceone-1.11.2-dev2/spaceone-1.11.2-dev2.tgz
-    version: 1.11.2-dev2
   - apiVersion: v2
     appVersion: 1.11.1
     created: "2023-05-03T05:52:06.750270026Z"
@@ -8446,4 +8364,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2023-05-03T07:37:09.14321934Z"
+generated: "2023-05-03T07:57:38.315023836Z"
