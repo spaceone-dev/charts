@@ -1527,6 +1527,17 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/monitoring-1.0.0/monitoring-1.0.0.tgz
     version: 1.0.0
+  mzc-service-api:
+  - apiVersion: v2
+    appVersion: 1.x.y
+    created: "2024-11-01T03:17:36.794759744Z"
+    description: SpaceONE MZC Service API Helm chart for Kubernetes
+    digest: e2493ac48246283354dea72fa60c62d5fee6f42d120ded0be7ca33a242193143
+    name: mzc-service-api
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/mzc-service-api-0.0.1/mzc-service-api-0.0.1.tgz
+    version: 0.0.1
   notification:
   - apiVersion: v2
     appVersion: 1.x.y
@@ -16527,4 +16538,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2024-10-28T11:32:03.963349168Z"
+generated: "2024-11-01T03:17:36.798704928Z"
