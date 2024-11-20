@@ -1649,6 +1649,17 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/notification-1.3.3/notification-1.3.3.tgz
     version: 1.3.3
+  opsflow:
+  - apiVersion: v2
+    appVersion: 1.x.y
+    created: "2024-11-20T07:09:40.53406048Z"
+    description: SpaceONE OpsFlow Helm chart for Kubernetes
+    digest: a9fcc61e273a162d8eb5ea97170c8ae0fd4341d4ee9696d29ece2a1fa183915e
+    name: opsflow
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/opsflow-0.0.1/opsflow-0.0.1.tgz
+    version: 0.0.1
   plugin:
   - apiVersion: v2
     appVersion: 1.x.y
@@ -16748,4 +16759,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2024-11-05T06:16:11.943588393Z"
+generated: "2024-11-20T07:09:40.536419925Z"
