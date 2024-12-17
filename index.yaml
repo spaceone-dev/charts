@@ -1299,6 +1299,16 @@ entries:
     version: 1.3.21
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2024-12-17T00:57:35.739925761Z"
+    description: SpaceONE inventory Helm chart for Kubernetes
+    digest: c37295beec54331aad97508146e69fa57908356fb2919f3e1a118eb59e3e9808
+    name: inventory-test
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/inventory-test-1.0.18/inventory-test-1.0.18.tgz
+    version: 1.0.18
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2024-12-17T00:17:03.273070357Z"
     description: SpaceONE inventory Helm chart for Kubernetes
     digest: b66f7613b5e814aafadab384060471e1bf83358a2df8f7a6fcd0027d5aa2d2ab
@@ -20085,4 +20095,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2024-12-17T00:18:45.050122433Z"
+generated: "2024-12-17T00:57:35.742826804Z"
