@@ -3,6 +3,16 @@ entries:
   alert-manager:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2025-01-07T17:24:20.365321505Z"
+    description: SpaceONE alert Manager Helm chart for Kubernetes
+    digest: 6fadc57ec4bfd4d37694131e5299d20182ea96617687b13e83449738f553ebbc
+    name: alert-manager
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/alert-manager-0.0.6/alert-manager-0.0.6.tgz
+    version: 0.0.6
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2025-01-03T03:05:41.844357285Z"
     description: SpaceONE alert Manager Helm chart for Kubernetes
     digest: f9ba8868c5a02eecbbbf6ac6043002b4727c35e1df07cb8009c1c4f2fc935bfe
@@ -23727,4 +23737,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2025-01-07T16:46:14.143624887Z"
+generated: "2025-01-07T17:24:20.369043165Z"
