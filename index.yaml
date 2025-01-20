@@ -712,6 +712,16 @@ entries:
   cost-ext:
   - apiVersion: v2
     appVersion: 1.x.y
+    created: "2025-01-20T03:39:00.85758795Z"
+    description: SpaceONE Cost Extension Helm chart for Kubernetes
+    digest: b95ac15409b4aebd3febd82f0c2d342d36bfd1e80c1765940a1b5f9115fb9783
+    name: cost-ext
+    type: application
+    urls:
+    - https://github.com/spaceone-dev/charts/releases/download/cost-ext-0.0.14/cost-ext-0.0.14.tgz
+    version: 0.0.14
+  - apiVersion: v2
+    appVersion: 1.x.y
     created: "2024-10-18T05:08:51.961440687Z"
     description: SpaceONE Cost Extension Helm chart for Kubernetes
     digest: 7009d7a5a4f810d71a02ad86cc51091ea9e6c09caa818b17cf07264efb2aca90
@@ -23849,4 +23859,4 @@ entries:
     urls:
     - https://github.com/spaceone-dev/charts/releases/download/supervisor-1.0.0/supervisor-1.0.0.tgz
     version: 1.0.0
-generated: "2025-01-08T01:22:40.254031698Z"
+generated: "2025-01-20T03:39:00.861222285Z"
