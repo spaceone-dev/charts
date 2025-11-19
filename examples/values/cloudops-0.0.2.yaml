@@ -1,0 +1,500 @@
+# ==============================================================================
+# ## Helm Chart Values ##
+# ==============================================================================
+# 이 파일은 CloudOps 설치를 위한 표준 템플릿입니다.
+#
+# 설치 가이드:
+# 1. 아래 필드 중 '[CUSTOM REQUIRED]' 주석이 달린 항목들은 반드시 환경에 맞게 수정해야 합니다.
+# 2. '[OPTIONAL]' 또는 '[INFO]' 주석이 달린 항목들은 환경에 따라 선택적으로 설정하거나 참고용으로 사용하세요.
+# 3. 수정 완료 후 `helm install <release-name> . -f <this-values-file>.yaml` 명령으로 설치를 진행합니다.
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 이미지 레지스트리 및 버전 정의 ( 주의: anchor 참조(&)는 변경하지 마세요. )
+# ------------------------------------------------------------------------------
+# [INFO] 각 마이크로 서비스의 이미지 레지스트리와 버전을 정의합니다.
+image_values:
+  alertManagerImage: &alertManagerImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/alert-manager
+    version: 0.0.dev79
+  boardImage: &boardImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/board
+    version: latest
+  configImage: &configImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/config
+    version: latest
+  consoleImage: &consoleImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/console
+    version: 2.0.dev401
+  consoleApiImage: &consoleApiImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/console-api
+    version: latest
+  consoleApiV2Image: &consoleApiV2Image
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/console-api-v2
+    version: latest
+  costAnalysisImage: &costAnalysisImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/cost-analysis
+    version: latest
+  dashboardImage: &dashboardImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/dashboard
+    version: latest
+  fileManagerImage: &fileManagerImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/file-manager
+    version: latest
+  identityImage: &identityImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/identity
+    version: latest
+  inventoryImage: &inventoryImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/inventory
+    version: latest
+  marketplaceAssetsImage: &marketplaceAssetsImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/marketplace-assets
+    version: latest
+  monitoringImage: &monitoringImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/monitoring
+    version: latest
+  notificationImage: &notificationImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/notification
+    version: latest
+  pluginImage: &pluginImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/plugin
+    version: latest
+  redisImage: &redisImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/redis
+    version: latest
+  repositoryImage: &repositoryImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/repository
+    version: latest
+  searchImage: &searchImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/search
+    version: latest
+  secretImage: &secretImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/secret
+    version: latest
+  statisticsImage: &statisticsImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/statistics
+    version: latest
+  supervisorImage: &supervisorImage
+    name: 580126104304.dkr.ecr.ap-northeast-2.amazonaws.com/cloudops/supervisor
+    version: latest
+
+# ------------------------------------------------------------------------------
+# 공통 변수 및 사용자 정의 ( 주의: anchor 참조(&)는 변경하지 마세요. )
+# ------------------------------------------------------------------------------
+common:
+  # [CUSTOM REQUIRED] Base Domain을 기반으로 서비스별 전체 도메인을 정의합니다.
+  domains:
+    console_api: &consoleApiDomain http://console-api.example.com
+    console_api_v2: &consoleApiV2Domain http://console-api-v2.example.com
+    console_api_v2_endpoint: &consoleApiV2Endpoint console-api-v2.example.com
+    console: &consoleDomain http://{domain_name}.example.com
+    cors: &corsDomains
+      - http://*.example.com
+      - https://*.example.com
+
+  # [CUSTOM REQUIRED] DB 접속 정보를 표준화하여 정의합니다. Secret을 별도로 생성한 경우, global.shared_secret, secret.application_grpc_secret에서 이어서 설정을 진행하세요.
+  databaseHostInfo: &databaseHostInfo
+    host: mongodb://admin:password@mongodb:27017
+    port: 27017
+    username: admin
+    password: password
+
+  # [OPTIONAL] 특정 노드에 파드를 할당해야 할 경우 사용합니다. (예: { Category: core })
+  node_selector: &commonNodeSelector {}
+
+  # [INFO] Nginx 이미지는 여러 서비스에서 프록시/사이드카로 사용됩니다.
+  nginxImage: &nginxImage
+    name: nginx
+    version: stable
+    imagePullPolicy: IfNotPresent
+    
+  # [INFO] 서비스별 gRPC 엔드포인트를 표준화하여 정의합니다.
+  serviceEndpoints:
+    alert_manager: &alertManagerEndpoint "grpc://alert-manager:50051"
+    board: &boardEndpoint "grpc://board:50051"
+    config: &configEndpoint "grpc://config:50051"
+    cost_analysis: &costAnalysisEndpoint "grpc://cost-analysis:50051"
+    dashboard: &dashboardEndpoint "grpc://dashboard:50051"
+    file_manager: &fileManagerEndpoint "grpc://file-manager:50051"
+    identity: &identityEndpoint "grpc://identity:50051"
+    inventory: &inventoryEndpoint "grpc://inventory:50051"
+    monitoring: &monitoringEndpoint "grpc://monitoring:50051"
+    notification: &notificationEndpoint "grpc://notification:50051"
+    plugin: &pluginEndpoint "grpc://plugin:50051"
+    repository: &repositoryEndpoint "grpc://repository:50051"
+    secret: &secretEndpoint "grpc://secret:50051"
+    statistics: &statisticsEndpoint "grpc://statistics:50051"
+
+
+# ==============================================================================
+# ## Global Configuration ## 
+# ( 주의: 대부분의 경우 anchor 참조(*) 수정과 개별 변경은 불필요합니다. )
+# ==============================================================================
+global:
+  namespace: cloudops
+  supervisor_namespace: cloudops
+
+  shared_secret:
+    # [OPTIONAL] Kubernetes Secret을 별도로 생성하거나 사용하지 않으려면 create: false로 설정하고, shared_secret.TOKEN, shared_secret.DATABASES를 삭제하세요.
+    create: true
+    # [OPTIONAL] enabled: false로 설정 시 Kubernetes Secret는 사용하지 않고, ConfigMap으로 사용됩니다.
+    enabled: true
+    # [CUSTOM REQUIRED] CloudOps 시스템 인증을 위한 토큰을 발급하여 입력합니다.
+    TOKEN: {}
+    DATABASES:
+      default:
+        <<: *databaseHostInfo
+        read_preference: PRIMARY  
+
+  shared_conf:
+    HANDLERS:
+      authentication:
+        - backend: spaceone.core.handler.authentication_handler:SpaceONEAuthenticationHandler
+      authorization:
+        - backend: spaceone.core.handler.authorization_handler:SpaceONEAuthorizationHandler
+      mutation:
+        - backend: spaceone.core.handler.mutation_handler:SpaceONEMutationHandler
+    CONNECTORS:
+      AlertManagerConnector: { endpoint: { v1: *alertManagerEndpoint } }
+      IdentityConnector: { endpoint: { v1: *identityEndpoint } }
+      SecretConnector: { endpoint: { v1: *secretEndpoint } }
+      RepositoryConnector: { endpoint: { v1: *repositoryEndpoint } }
+      PluginConnector: { endpoint: { v1: *pluginEndpoint } }
+      ConfigConnector: { endpoint: { v1: *configEndpoint } }
+      InventoryConnector: { endpoint: { v1: *inventoryEndpoint } }
+      MonitoringConnector: { endpoint: { v1: *monitoringEndpoint } }
+      StatisticsConnector: { endpoint: { v1: *statisticsEndpoint } }
+      NotificationConnector: { endpoint: { v1: *notificationEndpoint } }
+      SpaceConnector:
+        endpoints:
+          alert_manager: *alertManagerEndpoint
+          identity: *identityEndpoint
+          inventory: *inventoryEndpoint
+          repository: *repositoryEndpoint
+          secret: *secretEndpoint
+          monitoring: *monitoringEndpoint
+          config: *configEndpoint
+          statistics: *statisticsEndpoint
+          notification: *notificationEndpoint
+          cost_analysis: *costAnalysisEndpoint
+          board: *boardEndpoint
+          file_manager: *fileManagerEndpoint
+          opsflow: *opsflowEndpoint
+          dashboard: *dashboardEndpoint
+    CACHES:
+      default:
+        backend: spaceone.core.cache.redis_cache.RedisCache
+        host: redis
+        port: 6379
+        db: 0
+        encoding: utf-8
+        socket_timeout: 10
+        socket_connect_timeout: 10
+  backend:
+    sidecar: []
+    volumes: []
+  frontend:
+    sidecar: []
+    volumes: []
+
+# ==============================================================================
+# ## Sub-charts Configuration ## 
+# ( 주의: 대부분의 경우 anchor 참조(*) 수정과 개별 변경은 불필요합니다. )
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Active Services (기본 활성 서비스)
+# ------------------------------------------------------------------------------
+alert-manager:
+  enabled: true
+  image:
+    <<: *alertManagerImage
+  application_rest:
+    CONSOLE_URL: *consoleDomain
+  application_worker:
+    CONSOLE_URL: *consoleDomain
+  application_worker2:
+    CONSOLE_URL: *consoleDomain
+  application_grpc:
+    CONSOLE_URL: *consoleDomain
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+board:
+  enabled: true
+  image:
+    <<: *boardImage
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+config:
+  enabled: true
+  image:
+    <<: *configImage
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+console:
+  enabled: true
+  image:
+    <<: *consoleImage
+  production_json:
+    CONSOLE_API:
+      ENDPOINT: *consoleApiDomain
+    CONSOLE_API_V2:
+      ENDPOINT: *consoleApiV2Domain
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+console-api:
+  enabled: true
+  image:
+    <<: *consoleApiImage
+  nginx_proxy:
+      image:
+        <<: *nginxImage
+  production_json:
+    cors: *corsDomains
+    baseURLV2: *consoleApiV2Domain
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+console-api-v2:
+  enabled: true
+  replicas: 1
+  image:
+    <<: *consoleApiV2Image
+  nginx_proxy:
+      image:
+        <<: *nginxImage
+  application_rest:
+    CONSOLE_DOMAIN: *consoleDomain
+    CONSOLE_API_V2_ENDPOINT: *consoleApiV2Endpoint
+    REST_TITLE: 'REST API for CloudOps'
+    HANDLERS:
+      authentication: []
+      authorization: []
+      mutation: []
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+cost-analysis:
+  enabled: true
+  replicas: 1
+  replicas_worker: 1
+  scheduler: true
+  worker: true
+  image:
+    <<: *costAnalysisImage
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+dashboard:
+  enabled: true
+  replicas: 1
+  image:
+    <<: *dashboardImage
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+file-manager:
+  enabled: true
+  rest: true
+  image:
+    <<: *fileManagerImage
+  sidecar:
+    rest_web:
+      image:
+        <<: *nginxImage
+  application_rest:
+    FILE_MANAGER_URL: *consoleApiV2Domain
+    # [OPTIONAL] 엑셀 파일 다운로드 등의 파일매니저 기능을 사용하려면 아래 주석을 풀어 AWSS3Connector나 MinIOS3Connector의 접속정보를 설정하세요.
+    # CONNECTORS:
+    #   AWSS3Connector:
+    #     aws_access_key_id: <YOUR_AWS_ACCESS_KEY_ID>
+    #     aws_secret_access_key: <YOUR_AWS_SECRET_ACCESS_KEY>
+    #     region_name: <YOUR_S3_BUCKET_REGION>
+    #     bucket_name: <YOUR_S3_BUCKET_NAME>
+    #   MinIOS3Connector:
+    #     backend: spaceone.file_manager.connector.minio_connector:MinIOS3Connector
+    #     endpoint: <YOUR_MIN_IO_ENDPOINT>
+    #     minio_access_key_id: <YOUR_MIN_IO_ACCESS_KEY_ID>
+    #     minio_secret_access_key: <YOUR_MIN_IO_SECRET_ACCESS_KEY>
+    #     region_name: <YOUR_MIN_IO_REGION>
+    #     bucket_name: <YOUR_MIN_IO_BUCKET_NAME>
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+identity:
+  enabled: true
+  replicas: 1
+  image:
+    <<: *identityImage
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+inventory:
+  enabled: true
+  replicas: 1
+  replicas_worker: 2
+  scheduler: true
+  worker: true
+  image:
+    <<: *inventoryImage
+  application_grpc:
+    CONNECTORS:
+      FilesUploadConnector:
+        endpoint: http://file-manager-rest.cloudops.svc.cluster.local:80
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+marketplace-assets:
+  enabled: true
+  image:
+    <<: *marketplaceAssetsImage
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+monitoring:
+  enabled: true
+  replicas: 1
+  worker: false
+  image:
+    <<: *monitoringImage
+  application_grpc:
+      CONSOLE_DOMAIN: *consoleDomain
+  application_worker:
+      CONSOLE_DOMAIN: *consoleDomain
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+notification:
+  enabled: true
+  scheduler: false
+  worker: false
+  image:
+    <<: *notificationImage
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+plugin:
+  enabled: true
+  scheduler: true
+  worker: true
+  image:
+    <<: *pluginImage
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+redis:
+  enabled: true
+  image:
+    <<: *redisImage
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+repository:
+  enabled: true
+  image:
+    <<: *repositoryImage
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+search:
+  enabled: true
+  image:
+    <<: *searchImage
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+secret:
+  enabled: true
+  image:
+    <<: *secretImage
+  application_grpc: {}
+  # [OPTIONAL] Secret을 별도로 생성하거나 ConfigMap(application_grpc)으로 사용하려면 application_grpc_secret는 삭제하세요.
+  application_grpc_secret:
+    BACKEND: MongoDBConnector
+    CONNECTORS:
+      MongoDBConnector:
+        <<: *databaseHostInfo
+    # [OPTIONAL] AWS Secret Manager를 민감정보 관리환경으로 사용하려면 아래 주석을 풀어 AWSSecretManagerConnector로 변경하고 접속정보를 정의하세요.
+    # BACKEND: AWSSecretManagerConnector
+    # CONNECTORS:
+    #   AWSSecretManagerConnector:
+    #     aws_access_key_id: <YOUR_AWS_ACCESS_KEY_ID>
+    #     aws_secret_access_key: <YOUR_AWS_SECRET_ACCESS_KEY>
+    #     region_name: <YOUR_AWS_SECRET_MANAGER_REGION>
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+statistics:
+  enabled: true
+  scheduler: true
+  worker: true
+  image:
+    <<: *statisticsImage
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+supervisor:
+  enabled: true
+  image:
+    <<: *supervisorImage
+  application_scheduler:
+    HOSTNAME: cloudops-plugin.svc.cluster.local
+    CONNECTORS:
+      KubernetesConnector:
+        namespace: cloudops-plugin
+        replica:
+          inventory.Collector: 4
+          cost_analysis.DataSource: 4
+          monitoring.DataSource: 4
+        # [OPTIONAL] 사내 프록시 서버를 통해 외부로 나가야 하는 환경일 경우 설정합니다.
+        # env:
+        #   - name: HTTP_PROXY
+        #     value: http://10.0.0.1:3128
+        #   - name: HTTPS_PROXY
+        #     value: http://10.0.0.1:3128
+        #   - name: no_proxy
+        #     value: .svc.cluster.local,localhost,127.0.0.1
+  pod:
+    spec:
+      nodeSelector: *commonNodeSelector
+
+
+# ------------------------------------------------------------------------------
+# Inactive Services (기본 비활성 서비스)
+# ------------------------------------------------------------------------------
+cost-ext:
+  enabled: false
+inventory-v2:
+  enabled: false
+mongodb:
+  enabled: false
+mzc-service-api:
+  enabled: false
+opsflow:
+  enabled: false
+spacectl:
+  enabled: false
